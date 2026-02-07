@@ -139,6 +139,7 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 | `/status` | Project status dashboard |
 | `/handoff` | Co-author or future-session summary |
 | `/add-step` | Scaffold a new pipeline step end-to-end |
+| `/git` | Stage, commit, and push all changes to GitHub |
 
 ---
 
