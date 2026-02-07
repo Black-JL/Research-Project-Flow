@@ -1,4 +1,6 @@
-Quick project overview: (1) summarize pipeline steps and status from pipeline.md,
-(2) check output/logs/ for recent runs with dates, (3) check session_logs/ for last entry,
-(4) check scratch/ for active debugging, (5) check for Dropbox conflicted copies.
-Present as a clean table: Step | Last Run | Status | Notes.
+Quick project overview:
+(1) Read README.md pipeline table. Summarize steps and their status.
+(2) Check output/logs/ for the most recent log per step, with dates.
+(3) Check for Dropbox conflicted copies anywhere in the project.
+(4) Check scratch/ for active work.
+Present as a clean table: Step | Script | Last Run | Status | Notes.
