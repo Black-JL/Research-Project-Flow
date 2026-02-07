@@ -1,7 +1,8 @@
 #!/bin/bash
 # run_all.sh — Master execution script
-# Usage: ./run_all.sh "05_merge.do"   (single step)
-#        ./run_all.sh --all           (full pipeline)
+# Usage: ./run_all.sh "05_merge.do"    (single step)
+#        ./run_all.sh "20_analysis.py"  (Python step)
+#        ./run_all.sh --all            (full pipeline)
 
 set -euo pipefail
 
@@ -13,6 +14,7 @@ SCRIPTS_DIR="$PROJECT_ROOT/scripts"
 STATA_PATH="/usr/local/stata-mp/stata-mp"  # Update to your Stata path
 # STATA_PATH="/Applications/Stata/StataSE.app/Contents/MacOS/stata-se"  # macOS alternative
 R_PATH="$(which Rscript 2>/dev/null || echo '/usr/local/bin/Rscript')"
+PYTHON_PATH="$(which python3 2>/dev/null || echo '/usr/local/bin/python3')"
 # ------------------------
 
 timestamp() {
@@ -43,11 +45,24 @@ run_r() {
     return $exit_code
 }
 
+run_python() {
+    local script="$1"
+    local logfile="$LOG_DIR/$(basename "$script" .py)_$(timestamp).log"
+    echo "Running Python: $script"
+    echo "Log: $logfile"
+    "$PYTHON_PATH" "$SCRIPTS_DIR/$script" 2>&1 | tee "$logfile"
+    local exit_code=${PIPESTATUS[0]}
+    echo "Exit code: $exit_code"
+    open "$logfile" 2>/dev/null || true
+    return $exit_code
+}
+
 run_script() {
     local script="$1"
     case "$script" in
         *.do)  run_stata "$script" ;;
         *.R)   run_r "$script" ;;
+        *.py)  run_python "$script" ;;
         *)     echo "Unknown file type: $script"; exit 1 ;;
     esac
 }

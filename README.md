@@ -1,6 +1,6 @@
 # Research Project Flow
 
-A reusable template for empirical research projects. Built for economists and social scientists using Stata, R, LaTeX, Zotero, Dropbox, and AI-assisted workflows.
+A reusable template for empirical research projects. Built for economists and social scientists using Stata, R, Python, LaTeX, Zotero, Dropbox, and AI-assisted workflows.
 
 **Origin:** Distilled from the Psychedelic Decriminalization & Psychosis project (2024-2026), validated against Gentzkow & Shapiro, TIER Protocol 4.0, AEA Data Editor guidelines, World Bank DIME Analytics, and the skhiggins/Julian Reif Stata guides.
 
@@ -23,7 +23,7 @@ A reusable template for empirical research projects. Built for economists and so
 project-name/
 ├── README.md                  ← This file (project overview, pipeline, replication)
 ├── CLAUDE.md                  ← AI agent instructions
-├── run_all.sh                 ← Master execution script (Stata + R)
+├── run_all.sh                 ← Master execution script (Stata + R + Python)
 ├── .gitignore
 │
 ├── data/
@@ -40,7 +40,7 @@ project-name/
 │   ├── logs/                  ← Execution logs
 │   ├── figures/               ← Plots, maps (manuscript pulls from here)
 │   ├── tables/                ← LaTeX .tex fragments (manuscript \input from here)
-│   └── results/               ← Stored estimation results (.ster, .rds)
+│   └── results/               ← Stored estimation results (.ster, .rds, .pkl)
 │
 ├── manuscript/
 │   ├── manuscript.tex         ← Active manuscript
@@ -81,9 +81,10 @@ project-name/
 
 - **Stata** (version XX, MP/SE)
 - **R** (version X.X)
+- **Python** (version X.X)
 - **LaTeX** (for manuscript compilation)
 - **Zotero** with Better BibTeX (for citation management)
-- **Packages:** <!-- list Stata/R packages -->
+- **Packages:** <!-- list Stata/R/Python packages -->
 - **Expected runtime:** <!-- X minutes/hours -->
 - **Last run on:** <!-- OS, machine description -->
 
