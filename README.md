@@ -132,14 +132,24 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 
 ## Available Commands
 
-| Command | Purpose |
-|---------|---------|
-| `/run` | Run a pipeline step with validation |
-| `/check` | Full project integrity and manuscript audit |
-| `/status` | Project status dashboard |
-| `/handoff` | Co-author or future-session summary |
-| `/add-step` | Scaffold a new pipeline step end-to-end |
-| `/git` | Stage, commit, and push all changes to GitHub |
+### Project commands (this repo only)
+
+| Command | Purpose | Usage |
+|---------|---------|-------|
+| `/status` | Project status dashboard | Just type `/status`. Shows pipeline steps, last run dates, Dropbox conflicts, scratch work. |
+| `/run` | Run a pipeline step with validation | `/run` (prompts for step), `/run --all` (full pipeline), `/run --from 05` (from step 05 forward). |
+| `/check` | Full project integrity and manuscript audit | Just type `/check`. Verifies scripts, data files, params, and manuscript references all match. |
+| `/add-step` | Scaffold a new pipeline step end-to-end | Just type `/add-step`. Prompts for step number, language, inputs, outputs. Creates script, updates README and run_all.sh. |
+| `/handoff` | Co-author or future-session summary | Just type `/handoff`. Summarizes recent changes, outputs regenerated, open questions. Writes to `session_logs/`. |
+
+### Global commands (available in any project)
+
+| Command | Purpose | Usage |
+|---------|---------|-------|
+| `/git` | Stage, commit, and push all changes | Just type `/git`. No confirmation needed — stages everything, writes a commit message, commits, and pushes. |
+| `/handoff` | Summarize recent work for a collaborator | Just type `/handoff`. Summarizes last 7 days of git activity, modified files, and TODOs. |
+
+> **Note:** In this repo, `/handoff` uses the project-specific version (checks pipeline status, writes to `session_logs/`). The global version is a simpler git-based summary used in other projects.
 
 ---
 
