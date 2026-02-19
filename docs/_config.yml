@@ -5,7 +5,7 @@ remote_theme: just-the-docs/just-the-docs
 url: https://black-jl.github.io
 baseurl: /Research-Project-Flow
 
-color_scheme: light
+color_scheme: forest
 
 search_enabled: true
 search.heading_level: 3

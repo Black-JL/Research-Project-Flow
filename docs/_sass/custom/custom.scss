@@ -1,0 +1,9 @@
+// Force all nav sections to be expanded (no click-to-expand)
+.nav-list .nav-list-item > .nav-list-expander + .nav-list {
+  display: block !important;
+}
+
+// Hide the expander arrows since sections are always open
+.nav-list-expander {
+  display: none !important;
+}
