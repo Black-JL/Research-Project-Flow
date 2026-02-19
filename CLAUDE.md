@@ -1,6 +1,6 @@
 # AI Agent Instructions
 
-Project root: /Users/jaredblack/Library/CloudStorage/Dropbox/Research-Project-Flow
+Project root: . (repository root)
 
 ## Session Start
 At the start of every session, run /status silently to orient yourself. Tell the user what you found only if something needs attention.

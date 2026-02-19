@@ -8,9 +8,9 @@ set more off
 set maxvar 32767
 
 * --- Detect user and set project root ---
-if "`c(username)'" == "jaredblack" {
-    global root "/Users/jaredblack/Library/CloudStorage/Dropbox/Research-Project-Flow"
-}
+* if "`c(username)'" == "yourusername" {
+*     global root "/your/path/to/Research-Project-Flow"
+* }
 * Add each collaborator:
 * if "`c(username)'" == "coauthor" {
 *     global root "/Users/coauthor/Dropbox/Research-Project-Flow"
