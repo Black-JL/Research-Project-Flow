@@ -15,7 +15,7 @@ By Jared Black
 
 [Download as PDF](guide.pdf){: .btn .btn-primary .mr-2 }
 
-![An AI-Assisted Research Flow]({{ site.baseurl }}/assets/images/main_image.png)
+<img src="{{ site.baseurl }}/assets/images/main_image.png" alt="An AI-Assisted Research Flow" style="width: 25%;">
 
 ---
 
