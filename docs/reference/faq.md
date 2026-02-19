@@ -177,11 +177,11 @@ The answer is in three places:
 
 If your co-author is skeptical — and healthy skepticism is appropriate — point them to the session logs and the git history. The audit trail is the whole point of this workflow. You can explain and defend every change because every change is documented.
 
-### How do I bring this up with a senior co-author?
+### How do I bring this up with a co-author?
 
 Be direct: *"I've been using an AI coding tool to organize the project and write data cleaning scripts. Every change is tracked in version control and documented in session logs. The estimation code and the writing are mine. Here's the session log from the last working session if you want to see what it did."*
 
-Most senior researchers will not care how the data cleaning scripts were written, as long as they are correct, documented, and reproducible. The ones who do care will be reassured by the audit trail.
+The audit trail is there for exactly this conversation. Anyone who wants to verify what the AI did can read the session logs, check the git history, and inspect the code. That is the point of the workflow.
 
 ---
 
