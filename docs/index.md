@@ -15,7 +15,7 @@ By Jared Black
 
 [Download as PDF](guide.pdf){: .btn .btn-primary .mr-2 }
 
-<img src="{{ site.baseurl }}/assets/images/main_image.png" alt="An AI-Assisted Research Flow" style="float: right; width: 50%; margin: 0 0 1rem 1.5rem; border-radius: 6px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); opacity: 0.9;">
+<img src="{{ site.baseurl }}/assets/images/main_image.png" alt="An AI-Assisted Research Flow" style="float: right; width: 50%; margin: 0 0 1.5rem 2rem; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.15); opacity: 0.9;">
 
 ## Is this you?
 
