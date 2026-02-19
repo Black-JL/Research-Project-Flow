@@ -23,7 +23,7 @@ heading_anchors: true
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "&copy; Jared L. Black. Built with <a href=\"https://just-the-docs.com\">Just the Docs</a>."
+footer_content: "<a href=\"https://github.com/Black-JL/Research-Project-Flow\" target=\"_blank\">View on GitHub</a><br>&copy; Jared L. Black. Built with <a href=\"https://just-the-docs.com\">Just the Docs</a>."
 
 plugins:
   - jekyll-remote-theme
