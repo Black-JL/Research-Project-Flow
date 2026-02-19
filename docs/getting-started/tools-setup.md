@@ -7,7 +7,7 @@ nav_order: 2
 
 # Tools & Setup
 
-![Test and refine illustration]({{ site.baseurl }}/assets/images/header_6.png)
+<img src="{{ site.baseurl }}/assets/images/real_scenario_6.png" alt="Results dashboard illustration" class="page-illustration">
 
 {: .note }
 > Instructions are written for macOS with Windows/Linux notes where they differ.

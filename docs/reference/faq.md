@@ -7,7 +7,7 @@ nav_order: 2
 
 # FAQ
 
-![Results and tables illustration]({{ site.baseurl }}/assets/images/header_4.png)
+<img src="{{ site.baseurl }}/assets/images/real_scenario_4.png" alt="Manuscript and notes illustration" class="page-illustration">
 
 ## Getting started
 

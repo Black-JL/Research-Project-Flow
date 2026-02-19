@@ -7,7 +7,7 @@ nav_order: 3
 
 # Writing with AI
 
-![Visualization pipeline illustration]({{ site.baseurl }}/assets/images/header_5.png)
+<img src="{{ site.baseurl }}/assets/images/real_scenario_3.png" alt="Charts and results illustration" class="page-illustration">
 
 ## The role of AI in academic writing
 

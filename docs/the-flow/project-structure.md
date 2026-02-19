@@ -7,7 +7,7 @@ nav_order: 1
 
 # Project Structure
 
-![Project structure illustration]({{ site.baseurl }}/assets/images/header_1.png)
+<img src="{{ site.baseurl }}/assets/images/real_scenario_1.png" alt="Project setup illustration" class="page-illustration">
 
 ## Clone the template
 

@@ -7,7 +7,7 @@ nav_order: 1
 
 # Why AI-Assisted Research
 
-![Data analysis illustration]({{ site.baseurl }}/assets/images/header_3.png)
+<img src="{{ site.baseurl }}/assets/images/real_scenario_2.png" alt="Data exploration illustration" class="page-illustration">
 
 ## The problem
 

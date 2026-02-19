@@ -90,3 +90,26 @@
 .side-bar {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+// =============================================
+// Right-floated page illustrations
+// =============================================
+
+.page-illustration {
+  float: right;
+  width: 220px;
+  margin: 0 0 1.5rem 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  opacity: 0.9;
+}
+
+// On smaller screens, stack above content
+@media (max-width: 600px) {
+  .page-illustration {
+    float: none;
+    display: block;
+    width: 60%;
+    margin: 0 auto 1.5rem auto;
+  }
+}
