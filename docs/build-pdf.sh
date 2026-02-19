@@ -17,6 +17,7 @@ CHAPTERS=(
   "getting-started/why-ai-research.md"
   "getting-started/tools-setup.md"
   "the-flow/project-structure.md"
+  "the-flow/your-first-session.md"
   "the-flow/ai-assisted-workflow.md"
   "the-flow/writing-with-ai.md"
   "reference/commands-cheatsheet.md"

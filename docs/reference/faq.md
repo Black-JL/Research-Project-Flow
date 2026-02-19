@@ -137,6 +137,54 @@ The `.gitignore` file controls what Git tracks. Large data files should be exclu
 
 ---
 
+## Common mistakes
+
+### Things I wish I had known
+
+These are patterns that trip up almost everyone who starts using AI for research. Learn from them before you repeat them.
+
+**Giving the AI too many tasks at once.** "Reorganize all my scripts, rebuild the pipeline, update the README, and fix the estimation code" will produce mediocre results across the board. One task per request. Let it finish, review the output, then move on.
+
+**Letting sessions run too long.** After an hour or two of active work, the AI's context window is full. It starts forgetting what it did earlier, contradicting itself, or getting slower. Run `/handoff`, close the session, and start fresh. A clean session with a good handoff note is more productive than a marathon session that degrades.
+
+**Trusting the log summary instead of the log.** When the AI says "the script ran successfully and produced 15,000 observations," read the actual log. The AI is usually right, but "usually" is not good enough for research. The log is in `output/logs/`. Read it.
+
+**Not stating what should stay the same.** When you ask the AI to edit a script, it may "improve" things you did not ask it to touch. Always say what should not change: "Edit the formatting. Do not change any estimation commands or sample restrictions."
+
+**Skipping the first `/check`.** Before you start real work in a session, run `/check`. It takes a few seconds and tells you whether the pipeline is consistent. Finding out that something is broken *after* you have been building on top of it for an hour is painful.
+
+**Using AI for the parts that require judgment.** Data cleaning and visualization? Let the AI drive. Estimation code and manuscript writing? You drive. The AI is a tool for the mechanical parts of research. The intellectual parts are yours. See [Where is the AI good and where is it not?](#where-is-the-ai-good-and-where-is-it-not) above.
+
+---
+
+## Working with co-authors
+
+### My co-author does not use AI. Is that a problem?
+
+No. This is the normal case. Most co-authors will not use AI coding tools, and they do not need to.
+
+Your co-author sees the same project folder you do — scripts, data, output, manuscript. Every file is a normal file in a normal folder. Nothing about the project depends on AI to function. If your co-author wants to open `scripts/10_balance.R` and edit it by hand, they can. If they want to run the pipeline themselves, `./run_all.sh --all` works without any AI tool installed.
+
+The question your co-author will have is: *"How do I know what the AI changed?"*
+
+The answer is in three places:
+
+1. **Session logs** (`session_logs/`). Every working session produces a dated log that says what the AI did and why. Your co-author reads these the same way they would read your lab notebook.
+
+2. **Git history.** Every commit has a message describing the changes. `git log --oneline` shows the history. `git diff` shows exactly what changed in any file.
+
+3. **The code itself.** Every script has a structured header documenting its purpose, inputs, outputs, and dependencies. The code is readable, conventional, and follows the same patterns whether you or the AI wrote it.
+
+If your co-author is skeptical — and healthy skepticism is appropriate — point them to the session logs and the git history. The audit trail is the whole point of this workflow. You can explain and defend every change because every change is documented.
+
+### How do I bring this up with a senior co-author?
+
+Be direct: *"I've been using an AI coding tool to organize the project and write data cleaning scripts. Every change is tracked in version control and documented in session logs. The estimation code and the writing are mine. Here's the session log from the last working session if you want to see what it did."*
+
+Most senior researchers will not care how the data cleaning scripts were written, as long as they are correct, documented, and reproducible. The ones who do care will be reassured by the audit trail.
+
+---
+
 ## Troubleshooting
 
 ### Claude Code says "command not found"

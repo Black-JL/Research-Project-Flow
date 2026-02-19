@@ -2,7 +2,7 @@
 title: The AI-Assisted Workflow
 layout: default
 parent: The Flow
-nav_order: 2
+nav_order: 3
 ---
 
 # The AI-Assisted Workflow
@@ -199,6 +199,42 @@ When you need to change a parameter:
 ```
 
 The AI modifies both files and verifies consistency.
+
+## Git is your undo button
+
+If you have never let software modify your research files before, this is the most important thing to understand: **every change the AI makes is reversible.**
+
+When the AI edits a script, creates a file, or modifies your README, that change exists in your file system — visible, inspectable, and undoable. If you are using Git (Path A), you have a complete history of every change and can undo any of them:
+
+```bash
+git diff                       # see what changed
+git checkout -- scripts/05_merge.do   # revert one file
+git stash                      # undo all uncommitted changes (keeps them saved)
+```
+
+This is why the workflow uses `/git` to commit after each working session. Each commit is a snapshot. If something goes wrong three sessions later, you can go back to any previous snapshot.
+
+Even if you are not using Git (Path B), the AI is working on files in your Dropbox folder. Dropbox keeps version history. You can restore any file to a previous version through the Dropbox website.
+
+The point: **you are not handing control to the AI.** You are letting it make changes that you can see, review, and reverse. The worst case is not "the AI destroyed my project." The worst case is "the AI made a change I don't like, and I reverted it." That should take about five seconds.
+
+## Session hygiene
+
+AI sessions degrade over time. The longer a session runs, the more context the AI accumulates, and eventually it starts losing track of earlier decisions, repeating itself, or making mistakes it would not have made at the start. This is a property of how context windows work, and it affects every AI tool.
+
+**Keep sessions focused.** One task per session is ideal. "Reorganize the pipeline" is a session. "Write the estimation code" is a different session. Do not try to do both in one sitting — the quality of the second task will suffer because the AI's context is full of the first.
+
+**Watch for signs the session is going sideways:**
+- The AI proposes changes you already discussed and rejected
+- It forgets file names or paths it was using earlier
+- It starts writing code that contradicts its own earlier output
+- Responses get slower or more generic
+
+When you see these signs, wrap up. Run `/handoff` to save the session state, then quit and start fresh. The new session will read `CLAUDE.md` and the session log, and pick up where you left off — but with a clean context window.
+
+**Use `/handoff` liberally.** Even if you are not done for the day, a handoff captures what happened so the next session (or the next day) starts with a clear summary instead of a vague memory. Think of it as saving your game.
+
+**Commit before and after.** Run `/git` at the start of a session (to capture the baseline) and at the end (to capture your work). If a session goes badly, you can revert to the start-of-session commit and try again.
 
 ## Ending a session
 
