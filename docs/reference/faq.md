@@ -38,6 +38,28 @@ This workflow is designed for **resurrecting stalled projects** — organizing t
 
 The template supports Stata, R, and Python. Use whatever your field and co-authors expect. Most economics departments use Stata. The template handles mixed-language pipelines, so you can use R for data visualization and Stata for estimation in the same project.
 
+### What if I want to use Word instead of LaTeX?
+
+The template ships with a LaTeX manuscript setup, but the entire data pipeline — scripts, `run_all.sh`, logging, parameters, version control — has nothing to do with your manuscript format. If you never touch LaTeX, all of that still works.
+
+The limitation is the manuscript integration. The AI can read and edit `.tex` files the same way it reads and edits code — they are plain text. A `.docx` file is a binary format. The AI cannot open your Word document and tighten a paragraph the way it can with LaTeX or markdown. You also lose the live-compile workflow where your PDF updates in a VS Code tab as the AI edits the source.
+
+**My recommended workaround: write in markdown.** Markdown has almost no learning curve — if you can write an email, you can write markdown. The AI can read and edit markdown files natively, so you keep the full "AI helps with prose" workflow from the [Writing with AI]({% link the-flow/writing-with-ai.md %}) chapter. When you are happy with the content, convert to Word as a final step:
+
+```bash
+pandoc manuscript.md -o manuscript.docx
+```
+
+If your journal or co-author requires a specific Word template, pandoc supports that too:
+
+```bash
+pandoc manuscript.md -o manuscript.docx --reference-doc=journal_template.docx
+```
+
+This way you draft and iterate with the AI in markdown, and producing the `.docx` is a one-command conversion at the end. You skip the upfront investment of learning LaTeX, and you keep the AI in the loop for writing tasks.
+
+**The other option: just split the labor.** Let the AI handle the pipeline and code. Do your writing in Word yourself. Skip the "Writing with AI" chapter and treat the manuscript as your domain. That is a perfectly valid way to use this workflow — you are still getting the bulk of the value from the data pipeline side.
+
 ### How much does this cost?
 
 This is an AI-heavy workflow. You will use tokens quickly when the AI reads data files, writes scripts, edits manuscripts, and runs your pipeline. Be realistic about that upfront.
@@ -161,7 +183,7 @@ These are patterns that tripped me up, and that I have seen others run into. Lea
 
 ### My co-author does not use AI. Is that a problem?
 
-No. This is the normal case. Most co-authors will not use AI coding tools, and they do not need to.
+No. Some co-authors use AI, some do not. Some write code, some do not. The workflow accommodates all of these.
 
 Your co-author sees the same project folder you do — scripts, data, output, manuscript. Every file is a normal file in a normal folder. Nothing about the project depends on AI to function. If your co-author wants to open `scripts/10_balance.R` and edit it by hand, they can. If they want to run the pipeline themselves, `./run_all.sh --all` works without any AI tool installed.
 
@@ -176,6 +198,14 @@ The answer is in three places:
 3. **The code itself.** Every script has a structured header documenting its purpose, inputs, outputs, and dependencies. The code is readable, conventional, and follows the same patterns whether you or the AI wrote it.
 
 If your co-author is skeptical — and healthy skepticism is appropriate — point them to the session logs and the git history. The audit trail is the whole point of this workflow. You can explain and defend every change because every change is documented.
+
+### How do I leave notes for my co-author?
+
+The `/handoff` command is designed for this. When you finish a working session, `/handoff` writes a date-labeled summary to `session_logs/` that lists everything you did: files created, scripts modified, outputs regenerated, open questions. Tell your co-author: "Go look at the session logs." They are clean, dated, and live in one place in the project structure — no stray files accumulating in random folders.
+
+If you want something more tailored, you can also just ask the AI directly: *"I'm wrapping up. Create a markdown file called `notes_for_sarah.md` in the project root. Summarize everything we changed today, plus these additional items I'm about to list."* The AI will create the file with whatever you tell it, and you can text your co-author a link or just say "everything I did is in `notes_for_sarah.md`."
+
+Both approaches work. I recommend the session logs as your default because they are consistent — same format, same location, same naming convention, every session. They build up into a clean record of the project's evolution rather than a collection of one-off notes. But for a quick "here's what changed today" message to a specific person, a custom markdown file takes ten seconds to create.
 
 ### How do I bring this up with a co-author?
 

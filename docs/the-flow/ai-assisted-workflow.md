@@ -230,7 +230,12 @@ AI sessions degrade over time. The longer a session runs, the more context the A
 - It starts writing code that contradicts its own earlier output
 - Responses get slower or more generic
 
-When you see these signs, wrap up. Run `/handoff` to save the session state, then quit and start fresh. The new session will read `CLAUDE.md` and the session log, and pick up where you left off — but with a clean context window.
+When you see these signs, it is time to reset. You have two options:
+
+- **Clear the context without leaving.** Type `/clear` in the same terminal. This wipes the AI's context window and starts a fresh conversation — but you stay in the same terminal, in the same folder. The AI re-reads `CLAUDE.md` and orients itself. This is the fastest way to reset.
+- **Run `/handoff` first.** If you want a record of what happened before clearing, run `/handoff` to save the session state, then `/clear` to start fresh. The new conversation will read `CLAUDE.md` and the session log, and pick up where you left off with a clean context window.
+
+**You can run multiple sessions at once.** Open two or three terminal tabs in the same project folder, each running its own AI session. One tab cleans data while another writes documentation. They are working on the same files, so coordinate — do not have two sessions editing the same script simultaneously. But for independent tasks, parallel sessions can save real time.
 
 **Use `/handoff` liberally.** Even if you are not done for the day, a handoff captures what happened so the next session (or the next day) starts with a clear summary instead of a vague memory. Think of it as saving your game.
 
