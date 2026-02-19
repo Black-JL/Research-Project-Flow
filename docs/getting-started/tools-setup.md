@@ -7,13 +7,13 @@ nav_order: 2
 
 # Tools & Setup
 
-<img src="{{ site.baseurl }}/assets/images/real_scenario_6.png" alt="Results dashboard illustration" class="page-illustration">
-
 {: .note }
 > Instructions are written for macOS with Windows/Linux notes where they differ.
 
 {: .tip }
 > **Feeling overwhelmed?** This guide covers a lot. You do not need to absorb it all before you start. Follow the first few steps below to get an AI coding tool running on your machine. Once it is working, copy the URL for this website and paste it into your AI tool: *"Read this guide and help me set up my project."* It will walk you through the rest.
+
+<img src="{{ site.baseurl }}/assets/images/real_scenario_6.png" alt="Results dashboard illustration" class="page-illustration">
 
 ## Two paths
 
