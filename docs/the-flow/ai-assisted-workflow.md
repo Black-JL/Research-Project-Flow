@@ -135,14 +135,29 @@ The template includes built-in commands that handle common tasks:
 
 ## Working with data
 
+### Protect your raw data from the AI
+
+{: .important }
+> **If you have proprietary, restricted-use, or individually identifiable data, the AI should never see it.**
+
+This matters more than anything else in this guide. If your data is covered by a data use agreement (DUA), HIPAA, or any other access restriction, you must do your data cleaning, de-identification, and aggregation **before** the AI has access to any of it. That means:
+
+1. **Write your data cleaning and collapsing code offline.** The AI can help you write the code — describe what you need, let it draft the script — but you run that code yourself, outside of the AI session, on your own machine. Do not give the AI a path to read the raw files.
+
+2. **Only give the AI access to aggregated or de-identified data.** Once your data is collapsed to the level where it is safe — no individual records, no identifiers, within the bounds of your DUA — then you can let the AI read it, work with it, and help you analyze it.
+
+3. **Consider physical separation.** One approach: keep your raw disaggregated data on an external drive. Do not even have the drive plugged in while working with the AI. This makes it impossible for the AI to access raw data, even accidentally.
+
+The template's `data/raw/` folder is marked read-only in `CLAUDE.md`, and the AI is instructed never to modify it. But "read-only" still means the AI can read the files if they are on a connected drive. For truly sensitive data, physical separation is the safest approach.
+
 {: .warning }
 > **`data/raw/` is sacred** — Never modify raw data. The AI knows this rule (it's in `CLAUDE.md`). If you ask it to edit a file in `data/raw/`, it will refuse and explain why.
 
-The typical data workflow:
+### The typical data workflow
 
 1. Place raw data in `data/raw/` with a README documenting its source and access date.
-2. Write import/cleaning scripts that read from `data/raw/` and save to `data/processed/`.
-3. Write analysis scripts that read from `data/processed/` and save results to `output/`.
+2. Write import/cleaning scripts that read from `data/raw/` and save to `data/processed/`. If your raw data is restricted, **run these scripts yourself offline** — not through the AI.
+3. Once your processed data is safe for the AI to see, write analysis scripts that read from `data/processed/` and save results to `output/`. The AI can run these.
 
 Each script has a structured header that documents its purpose, inputs, outputs, and dependencies. The AI writes these headers and reads them before modifying any script.
 

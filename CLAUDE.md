@@ -6,7 +6,7 @@ Project root: . (repository root)
 At the start of every session, run /status silently to orient yourself. Tell the user what you found only if something needs attention.
 
 ## Rules
-- `data/raw/` is READ-ONLY. Never modify.
+- `data/raw/` is READ-ONLY. Never modify. Never read files in `data/raw/` unless the user explicitly confirms it is safe to do so (the data may be restricted-use or individually identifiable).
 - Read script headers before modifying any script (they document inputs/outputs/dependencies).
 - Check `scripts/params.do` before using hardcoded values. Values must match the README Parameters table.
 - If your action changes the project's I/O graph (which scripts exist, what they read, what they write, what paths are used), show the user what you plan to change and what it affects before doing it. For everything else, just do it.
