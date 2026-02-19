@@ -10,6 +10,8 @@ nav_order: 1
 A practical guide for empirical researchers.
 {: .fs-5 .fw-300 }
 
+[Download as PDF](guide.pdf){: .btn .btn-primary .mr-2 }
+
 ---
 
 ## Is this you?
@@ -56,6 +58,15 @@ That is the point. The AI is a tool that works in your space, on your terms, pro
 Everything in this guide maps to a concrete, reusable project template: [Research-Project-Flow](https://github.com/Black-JL/Research-Project-Flow). You can clone it, fill in your details, and start working. The guide explains what each piece does and why.
 
 No command-line experience required. No AI experience required. Just a willingness to follow instructions and learn as you go.
+
+## Acknowledgments
+
+This guide builds on the work of several people:
+
+- [Scott Cunningham](https://github.com/scunning1975) (*Causal Inference: The Mixtape*) — the [Referee 2 audit protocol](https://github.com/scunning1975/MixtapeTools) and the idea that you cannot grade your own homework. His [MixtapeTools](https://github.com/scunning1975/MixtapeTools) project pioneered many of the practices described here for using AI in empirical research.
+- [Matthew Gentzkow and Jesse Shapiro](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf) — *Code and Data for the Social Sciences*, the foundational reference for reproducible project organization.
+- [Deirdre McCloskey](https://www.deirdremccloskey.com/docs/pdf/Article_86.pdf) — *Economical Writing*, the source of the writing standards enforced throughout the template.
+- [NetworkChuck](https://github.com/theNetworkChuck/ai-in-the-terminal) — the setup guide and video that this project's installation instructions are based on.
 
 {: .tip }
 > **Reading this guide** — Work through the Getting Started chapters to set up your machine. Read The Flow chapters when you start your first project. Keep the Reference section open as a cheatsheet.

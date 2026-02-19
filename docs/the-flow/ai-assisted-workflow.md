@@ -125,6 +125,7 @@ The template includes built-in commands that handle common tasks:
 
 | Command | What it does |
 |:--------|:-------------|
+| `/init` | Initializes a new `CLAUDE.md` in the current directory. Use for non-template projects. |
 | `/status` | Scans the project. Reports pipeline state, last run dates, conflicts, uncommitted work. |
 | `/run` | Runs a pipeline step. Validates the script exists and logs the output. |
 | `/run --all` | Runs the full pipeline from start to finish. |

@@ -100,10 +100,12 @@ The AI searches your `.bib` file, finds the key, and inserts the `\cite{}` comma
 
 Once you have a working draft — organized, coded, with tables and figures in place — you need to stress-test it before submitting. You cannot grade your own homework, and the AI that helped you write it should not be the one reviewing it.
 
-[Referee 2](https://github.com/Black-JL/MixtapeTools/tree/main/personas) is an open-source audit protocol created by [Scott Cunningham](https://github.com/scunning1975/MixtapeTools) (of *Causal Inference: The Mixtape*) that uses AI to perform five systematic audits on your research:
+[Referee 2](https://github.com/Black-JL/MixtapeTools/tree/main/personas) is an open-source audit protocol created by [Scott Cunningham](https://github.com/scunning1975/MixtapeTools) (of *Causal Inference: The Mixtape*) that uses AI to perform five systematic audits on your research. For Cunningham's own account of how he uses Claude Code for empirical research and where Referee 2 fits, see his [Claude Code for Empirical Research](https://causalinf.substack.com/p/claude-code-part-12-how-i-use-claude) post.
+
+The five audits:
 
 1. **Code audit.** Identifies coding errors, missing value problems, and logic gaps in your scripts.
-2. **Cross-language replication.** Creates independent implementations of your analysis in R, Stata, and Python. If your original code has a subtle bug, a replication in a different language will likely produce a *different* bug — making discrepancies easy to catch. You cannot find errors by re-reading the same code that produced them.
+2. **Cross-language replication.** Creates independent implementations of your analysis in R, Stata, and Python. The key insight: hallucination errors are likely *orthogonal* across AI-produced code in different languages. If your Stata script has a subtle bug, an independent R implementation will likely produce a *different* bug — making discrepancies easy to catch by comparing outputs to six or more decimal places. You cannot find errors by re-reading the same code that produced them.
 3. **Directory audit.** Checks that your replication package is submission-ready: every file accounted for, every path working, every dependency documented.
 4. **Output automation audit.** Verifies that all tables and figures are programmatically generated from code, not manually edited.
 5. **Econometrics audit.** Reviews specification coherence, identification strategy, standard error choices, and sample definitions.

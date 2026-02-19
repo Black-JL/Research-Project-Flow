@@ -15,6 +15,18 @@ Quick reference for every command available in the Research Project Flow templat
 
 These commands work inside any project built from the template.
 
+### `/init`
+
+Initializes a new `CLAUDE.md` file in the current directory. Use this to set up the AI's project instructions from scratch.
+
+```
+> /init
+```
+
+**When to use:** If you are starting a project without the template, or if you want to create a fresh `CLAUDE.md` tailored to your project. The template already includes a `CLAUDE.md`, so you only need this for new or non-template projects. You can also borrow the `CLAUDE.md` from this template and adapt it.
+
+---
+
 ### `/status`
 
 Scans the project and reports its current state.

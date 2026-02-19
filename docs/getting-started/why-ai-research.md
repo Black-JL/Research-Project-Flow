@@ -34,6 +34,14 @@ AI does not replace the researcher's judgment. It replaces the overhead. Specifi
 
 The AI is fast at mechanical tasks and unreliable at judgment calls. A good workflow exploits the first property and guards against the second.
 
+### Where to trust it and where not to
+
+For **data cleaning, organization, and visualization**, the AI is consistently strong. Importing, reshaping, merging, labeling, charting — this is where the workflow saves the most time.
+
+For **estimation code**, the AI often gets things wrong. Not just the logic — the syntax. A `reghdfe` command with the wrong absorb structure, a `felm` call with misspecified clusters. You need to understand your statistical software well enough to catch these errors. If you hand estimation off to the AI without careful review, you accelerate bad code. Learn to write code, not just read it.
+
+For **writing**, the AI can tighten prose and enforce style rules, but the actual argument — the interpretation, the contribution, the narrative — must be yours. Be completely hands-on for estimation and writing, even if you give the AI wide latitude over everything else.
+
 ## The cost of not adopting
 
 If you organize your project poorly, no AI can fix it. If you organize it well, AI makes every subsequent step faster. The Research Project Flow template gives you the organization. This guide shows you how to use AI within it.

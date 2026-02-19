@@ -23,6 +23,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
+
+      - name: Build PDF
+        run: |
+          cd docs
+          bash build-pdf.sh
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/jekyll-build-pages@v1

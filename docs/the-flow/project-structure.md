@@ -85,7 +85,7 @@ This file tells the AI how to behave in your project. It specifies:
 - How to execute scripts
 - Writing standards
 
-The AI reads this file at the start of every session. It is the contract between you and the AI. Edit it when you want to change the AI's behavior.
+The AI reads this file at the start of every session. It is the contract between you and the AI. Edit it when you want to change the AI's behavior. If you are starting a project without the template, you can create a fresh `CLAUDE.md` by typing `/init` in Claude Code.
 
 ### `scripts/00_run.do`
 
