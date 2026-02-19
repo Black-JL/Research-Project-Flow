@@ -216,7 +216,7 @@ This is why the workflow uses `/git` to commit after each working session. Each 
 
 Even if you are not using Git (Path B), the AI is working on files in your Dropbox folder. Dropbox keeps version history. You can restore any file to a previous version through the Dropbox website.
 
-The point: **you are not handing control to the AI.** You are letting it make changes that you can see, review, and reverse. The worst case is not "the AI destroyed my project." The worst case is "the AI made a change I don't like, and I reverted it." That should take about five seconds.
+The point: **you are not handing control to the AI.** You are letting it make changes that you can see, review, and reverse. The common fear is "the AI will destroy my project." In practice, the usual bad outcome is "the AI made a change I don't like" — and if you are using Git, reverting it is straightforward.
 
 ## Session hygiene
 

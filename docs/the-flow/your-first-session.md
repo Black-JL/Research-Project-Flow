@@ -109,7 +109,7 @@ This process — drop, describe, organize, test — can take a single long sessi
 
 ## How to talk to the AI
 
-If you have only used AI through a chat interface, you are probably used to writing vague prompts and getting vague answers. That does not work here. The AI is operating on your actual files, and it needs specificity.
+When the AI is operating on your actual files, specificity matters more than it does in a chat interface. The AI is operating on your actual files, and it needs specificity.
 
 ### Be explicit about inputs and outputs
 
@@ -117,7 +117,7 @@ If you have only used AI through a chat interface, you are probably used to writ
 
 **Good:** "Write a Stata do-file that reads `data/raw/cdc_wonder_2015_2022.csv`, keeps only county FIPS, year, and death count columns, drops rows where the Notes column contains 'Unreliable', and saves to `data/processed/cdc_clean.dta`."
 
-The second prompt gives the AI everything it needs to write working code on the first try. The first prompt forces it to guess — and it will guess wrong.
+The second prompt gives the AI everything it needs to write working code on the first try. The first prompt forces it to guess — and in my experience, it usually guesses wrong.
 
 ### Name your files
 

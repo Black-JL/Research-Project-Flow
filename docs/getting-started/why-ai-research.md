@@ -11,9 +11,9 @@ nav_order: 1
 
 ## The problem
 
-Empirical research requires managing a staggering number of moving pieces: raw data, cleaning scripts, analysis code, output files, manuscripts, citations, and the documentation that ties them together. Most researchers handle this by hand. Files accumulate. Naming conventions drift. Documentation lags behind reality. By the time a paper is under review, the project folder is a maze that only the original author can navigate — and sometimes not even them.
+Empirical research requires managing a staggering number of moving pieces: raw data, cleaning scripts, analysis code, output files, manuscripts, citations, and the documentation that ties them together. Many researchers handle this by hand. Files accumulate. Naming conventions drift. Documentation lags behind reality. By the time a paper is under review, the project folder is a maze that only the original author can navigate — and sometimes not even them.
 
-The tools exist to solve this. Version control, reproducible pipelines, structured folder layouts — these practices are well-documented. Gentzkow and Shapiro wrote the definitive guide in 2014. The TIER Protocol formalized it. The AEA Data Editor enforces it. But adoption remains low, because the overhead of maintaining these systems falls entirely on the researcher.
+The tools exist to solve this. Version control, reproducible pipelines, structured folder layouts — these practices are well-documented. Gentzkow and Shapiro wrote an influential guide in 2014. The TIER Protocol formalized it. The AEA Data Editor enforces it. But adoption can be slow, in part because the overhead of maintaining these systems falls on the researcher.
 
 ## What changes with AI
 
@@ -34,18 +34,18 @@ AI does not replace the researcher's judgment. It replaces the overhead. Specifi
 - **You** evaluate whether results make economic sense.
 - **You** write the arguments that hold a paper together.
 
-The AI is fast at mechanical tasks and unreliable at judgment calls. A good workflow exploits the first property and guards against the second.
+The AI is fast at mechanical tasks and unreliable at judgment calls. The workflow described here tries to exploit the first property and guard against the second.
 
 ### Where to trust it and where not to
 
 For **data cleaning, organization, and visualization**, the AI is consistently strong. Importing, reshaping, merging, labeling, charting — this is where the workflow saves the most time.
 
-For **estimation code**, the AI often gets things wrong. Not just the logic — the syntax. A `reghdfe` command with the wrong absorb structure, a `felm` call with misspecified clusters. You need to understand your statistical software well enough to catch these errors. If you hand estimation off to the AI without careful review, you accelerate bad code. Learn to write code, not just read it.
+For **estimation code**, the AI often gets things wrong — in my experience. Not just the logic — the syntax. A `reghdfe` command with the wrong absorb structure, a `felm` call with misspecified clusters. I find it helps to understand your statistical software well enough to catch these errors. If estimation is handed off to the AI without careful review, bad code can get through.
 
-For **writing**, the AI can tighten prose and enforce style rules, but the actual argument — the interpretation, the contribution, the narrative — must be yours. Be completely hands-on for estimation and writing, even if you give the AI wide latitude over everything else.
+For **writing**, the AI can tighten prose and enforce style rules, but in my experience, the actual argument — the interpretation, the contribution, the narrative — needs to come from you. I recommend being hands-on for estimation and writing, even if you give the AI wide latitude over everything else.
 
 ## The cost of not adopting
 
 If you organize your project poorly, no AI can fix it. If you organize it well, AI makes every subsequent step faster. The Research Project Flow template gives you the organization. This guide shows you how to use AI within it.
 
-The researchers who adopt these tools now will have a compounding advantage: every project they complete makes the next one faster, because the template improves and the habits stick.
+In my experience, each project completed this way makes the next one faster, because the template improves and the habits stick.

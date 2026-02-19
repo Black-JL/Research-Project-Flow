@@ -39,9 +39,9 @@ This is an AI-heavy workflow. If you are working on a real research project — 
 
 **At minimum, you need a paid subscription.** Claude Code works with a Claude Pro account ($20/month), which gives you a set number of tokens per hour, per day, and per month. The free tier will not get you through a working session.
 
-**I recommend going further**, at least for the first month. If you are trying to get a stalled project unstuck, treat the higher-tier subscription (Claude Max at $100/month, or equivalent for your tool) as part of the cost of getting your research moving again. Dive in, spend a few weeks working intensively, and then assess whether the ongoing cost is worth it. For most researchers, the answer is obvious after one real session — but you need to be all-in enough to reach that point.
+**I recommend going further**, at least for the first month. If you are trying to get a stalled project unstuck, treat the higher-tier subscription (Claude Max at $100/month, or equivalent for your tool) as part of the cost of getting your research moving again. Dive in, spend a few weeks working intensively, and then assess whether the ongoing cost is worth it. For me, the value was obvious after one real session — but I had to invest enough to reach that point.
 
-You can monitor your token usage at [console.anthropic.com](https://console.anthropic.com/). If you hit your limit mid-session, the tool pauses until your tokens refresh — no surprise charges. This is not a tool you can evaluate on the free tier. Budget accordingly.
+You can monitor your token usage at [console.anthropic.com](https://console.anthropic.com/). If you hit your limit mid-session, the tool pauses until your tokens refresh — no surprise charges. In my experience, this is not a tool you can evaluate on the free tier. Budget accordingly.
 
 If you get stuck during setup, you can use any AI you already have access to (ChatGPT, Claude.ai, Gemini) to help troubleshoot.
 

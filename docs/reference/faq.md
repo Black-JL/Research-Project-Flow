@@ -30,9 +30,9 @@ Be honest with yourself about this. The AI is not equally reliable across all pa
 **Where you must be hands-on:**
 
 - **Estimation code.** The AI often gets this wrong. Not just the logic — the *syntax*. A `reghdfe` command with the wrong absorb structure, a `felm` call with misspecified clusters, a `linearmodels` panel estimator with the wrong entity effects. You need to understand the software you are using well enough to catch these errors. If you hand estimation off to the AI without careful review, you risk accelerating bad code. This is where learning to write code pays off.
-- **Writing.** The AI is good at telling you what it thinks results mean, and it can tighten prose and enforce style rules. But the actual argument — the interpretation, the contribution, the narrative that holds a paper together — must be yours. No AI I know of writes well enough to produce publishable academic prose without heavy revision. Be 100% hands-on for the writing that matters.
+- **Writing.** The AI is good at telling you what it thinks results mean, and it can tighten prose and enforce style rules. But in my experience, the actual argument — the interpretation, the contribution, the narrative that holds a paper together — needs to come from you. No AI I have used writes well enough to produce publishable academic prose without heavy revision. I recommend being hands-on for the writing that matters.
 
-This workflow is designed for **resurrecting stalled projects** — organizing them, rebuilding the pipeline, getting the scaffolding right. It is not a replacement for critical thinking or for engaging carefully with your estimation and your writing.
+This workflow is designed for **resurrecting stalled projects** — organizing them, rebuilding the pipeline, getting the scaffolding right. It is not a replacement for critical thinking, and your mileage may vary.
 
 ### Which statistical software should I use?
 
@@ -44,13 +44,13 @@ This is an AI-heavy workflow. You will use tokens quickly when the AI reads data
 
 **At minimum, you need a paid subscription.** Claude Code works with a Claude Pro account ($20/month), which comes with a set number of tokens per hour, per day, and per month. The free tier will not get you through a working session. Other tools (Gemini CLI, Codex) have their own subscription tiers — check their pricing.
 
-**I recommend starting with a higher tier.** If you are trying to get a stalled project unstuck, treat the higher-tier subscription (Claude Max at $100/month, or equivalent) as part of the cost of getting your research moving. Dive in, work intensively for a few weeks, then decide whether the ongoing cost is worth it. For most researchers, the answer is obvious after one real session — but you need to invest enough to reach that point.
+**I recommend starting with a higher tier.** If you are trying to get a stalled project unstuck, treat the higher-tier subscription (Claude Max at $100/month, or equivalent) as part of the cost of getting your research moving. Dive in, work intensively for a few weeks, then decide whether the ongoing cost is worth it. For me, the value was obvious after one real session — but I had to invest enough to reach that point.
 
 You can monitor your token usage at [console.anthropic.com](https://console.anthropic.com/) to see how quickly you burn through your allocation. If you hit your limit mid-session, the tool pauses until your tokens refresh — you do not get surprise charges.
 
 ### Can I use this with ChatGPT or other AI tools?
 
-The template is designed for Claude Code specifically. The `CLAUDE.md` file, the slash commands, and the automated project management all depend on Claude Code's ability to read and write files directly in your project. Other AI tools operate through a chat interface and cannot do this.
+The template ships with `CLAUDE.md` and slash commands designed for Claude Code. Other terminal-based AI tools (Gemini CLI, Codex) work with this template too — they read and write files directly in your project the same way. Chat-based tools like ChatGPT operate differently and cannot interact with your file system.
 
 ### What about auto-accept / "YOLO" mode?
 
@@ -141,7 +141,7 @@ The `.gitignore` file controls what Git tracks. Large data files should be exclu
 
 ### Things I wish I had known
 
-These are patterns that trip up almost everyone who starts using AI for research. Learn from them before you repeat them.
+These are patterns that tripped me up, and that I have seen others run into. Learn from them before you repeat them.
 
 **Giving the AI too many tasks at once.** "Reorganize all my scripts, rebuild the pipeline, update the README, and fix the estimation code" will produce mediocre results across the board. One task per request. Let it finish, review the output, then move on.
 
@@ -153,7 +153,7 @@ These are patterns that trip up almost everyone who starts using AI for research
 
 **Skipping the first `/check`.** Before you start real work in a session, run `/check`. It takes a few seconds and tells you whether the pipeline is consistent. Finding out that something is broken *after* you have been building on top of it for an hour is painful.
 
-**Using AI for the parts that require judgment.** Data cleaning and visualization? Let the AI drive. Estimation code and manuscript writing? You drive. The AI is a tool for the mechanical parts of research. The intellectual parts are yours. See [Where is the AI good and where is it not?](#where-is-the-ai-good-and-where-is-it-not) above.
+**Using AI for the parts that require judgment.** Data cleaning and visualization? Let the AI drive. Estimation code and manuscript writing? You drive. In my experience, the AI works best for the mechanical parts of research. The intellectual parts are where your judgment matters most. See [Where is the AI good and where is it not?](#where-is-the-ai-good-and-where-is-it-not) above.
 
 ---
 

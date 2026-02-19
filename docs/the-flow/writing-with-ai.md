@@ -11,7 +11,7 @@ nav_order: 4
 
 ## The role of AI in academic writing
 
-AI writes fast and clean. It does not write with insight. The division of labor is straightforward:
+AI writes fast and clean. It does not write with insight. Here is how I divide the labor:
 
 - **You** supply the argument, the interpretation, the economic intuition.
 - **The AI** handles structure, formatting, style enforcement, and mechanical editing.
@@ -20,7 +20,7 @@ This chapter covers how to use AI for manuscript work without producing prose th
 
 ## The writing standard
 
-The template enforces McCloskey's *Economical Writing* principles. These are baked into `CLAUDE.md`, so the AI follows them automatically:
+The template follows McCloskey's *Economical Writing* principles. These are baked into `CLAUDE.md`, so the AI follows them automatically:
 
 1. **Active verbs.** "Prices increased" — not "an increase in prices occurred."
 2. **Concrete language.** "Machines and workers" — not "capital and labor inputs."

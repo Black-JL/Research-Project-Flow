@@ -60,7 +60,7 @@ Six principles govern the layout:
 5. **Fail loudly.** Every script logs its execution. When something breaks, the log shows where and why.
 6. **Structure enforces discipline.** If a file doesn't have an obvious home, the structure needs updating — not the file.
 
-These are not arbitrary conventions. They come from Gentzkow & Shapiro, the TIER Protocol, and the AEA Data Editor's requirements. Following them means your project is replication-ready from day one.
+These conventions draw from Gentzkow & Shapiro, the TIER Protocol, and the AEA Data Editor's requirements. Following them gets your project closer to replication-ready from the start.
 
 ## Key files
 
