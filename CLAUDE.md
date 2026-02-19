@@ -19,9 +19,39 @@ At the start of every session, run /status silently to orient yourself. Tell the
 - `README.md` — Pipeline overview, table/figure map, parameters, data documentation.
 - `manuscript/aea_style_guide.md` — AEA formatting rules. Read before editing the manuscript.
 
-## Execution
-Run steps via: `./run_all.sh "<script_name>"`
-All runs log to `output/logs/`. Read the log after every run.
+## Execution — MCP Workflow
+
+Use `./run_all.sh "<script_name>"` for ALL script execution. This is mandatory.
+
+The script automatically:
+1. Runs the script in batch mode (Stata, R, or Python — detected by file extension)
+2. Saves the log to `output/logs/` with a timestamp
+3. Opens the log for review when complete
+
+**ALWAYS:**
+- Run scripts through `run_all.sh`, never by calling Stata/R/Python directly
+- Read the log after every run — check for errors, warnings, unexpected output
+- Report what the log shows to the user
+
+**NEVER:**
+- Leave log files in `scripts/` (they belong in `output/logs/`)
+- Skip reading the log after execution
+- Assume a script succeeded without checking the log
+
+### Pipeline tracing
+
+Before modifying any script, trace its dependencies in both directions:
+- **Upstream:** What data files does this script read? What scripts created those files?
+- **Downstream:** What files does this script produce? What scripts or manuscript sections consume them?
+
+Check the pipeline table in the README to verify the chain. If your change affects upstream or downstream dependencies, tell the user before proceeding.
+
+## Session Logging
+
+At the end of each session (or when asked for `/handoff`), write a session log to `session_logs/`:
+- **File naming:** `YYYY-MM-DD_<brief-topic>.md`
+- **One log per day** — append if a log already exists for today
+- **Required sections:** Summary, Tasks Completed, Files Created/Modified, Commands Run, Errors/Blockers, Pending Steps
 
 ## Writing
 Active verbs, concrete language, plain words. See Writing Standard in README.

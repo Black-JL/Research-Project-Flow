@@ -48,21 +48,35 @@ The AI reads your `CLAUDE.md` file and runs `/status` automatically. It scans th
 
 You talk to the AI by typing — or speaking, if you set up SuperWhisper — in the terminal. It responds, reads files, writes code, and executes commands, all within your project directory.
 
-## How the AI runs your scripts (MCP servers)
+## How the AI runs your scripts
 
-When you tell the AI to run a Stata do-file, an R script, or a Python script, it does not just fire the command blindly. The template uses **MCP (Model Context Protocol) servers** — lightweight connectors that let the AI interact with external tools like Stata, R, and Python in a structured way.
+When you tell the AI to run a Stata do-file, an R script, or a Python script, it does not fire the command blindly. The template includes `run_all.sh`, a shell script that wraps every execution with structured logging and feedback.
 
 Here is what happens when the AI runs a script:
 
-1. The AI sends the run command through the MCP server for that tool (e.g., Stata).
-2. The tool opens, executes the script, and produces output.
-3. The MCP server captures the log output and passes it back to the AI.
-4. The AI reads the log, checks for errors and warnings, and reports what it finds.
+1. You say "run Step 3" (or use the `/run` command).
+2. The AI calls `./run_all.sh "Step_3_setup.do"`.
+3. `run_all.sh` detects the file type (`.do` → Stata, `.R` → R, `.py` → Python) and launches the appropriate tool in batch mode.
+4. All output is captured to a timestamped log in `output/logs/`.
+5. The log opens automatically so you can see what happened.
+6. The AI reads the same log, checks for errors and warnings, and reports what it finds.
 
-You see the tool running in real time. The AI sees the same output you do. This is how it can tell you "row 4,312 has a missing FIPS code" instead of just "the script ran."
+You see the tool running. The AI sees the same output you do. This is how it can tell you "row 4,312 has a missing FIPS code" instead of just "the script ran."
 
-{: .note }
-> **Setting up MCP servers** — MCP configuration is project-specific and depends on which statistical tools you use. When you start a project from the template, ask the AI to help you configure MCP servers for your tools. It will set up the `.claude/` configuration files.
+### What this looks like with Stata
+
+The `run_all.sh` script creates a wrapper do-file that sets up proper logging, runs your script, and saves the log to `output/logs/`. When the run completes, the log opens in your default text editor. If you are working in VS Code with the terminal on the left, you can watch the log appear in a new tab while the AI reads it and reports results in the terminal beside it.
+
+The `CLAUDE.md` file enforces this workflow. The AI is instructed to always run scripts through `run_all.sh`, always read the log afterward, and never assume success without checking. If a script fails, the AI reads the error from the log and proposes a fix.
+
+### Pipeline tracing
+
+Before the AI modifies any script, it traces dependencies in both directions:
+
+- **Upstream:** What data does this script read? What created that data?
+- **Downstream:** What does this script produce? What consumes it — other scripts, tables, the manuscript?
+
+This prevents the common problem of fixing one script and breaking another. The dependency chain is documented in the README pipeline table, and the AI checks it before making changes.
 
 ## The core loop
 

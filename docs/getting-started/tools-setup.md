@@ -28,6 +28,16 @@ For setup instructions covering prerequisites, installation, and authentication 
 
 *Based on [NetworkChuck's](https://github.com/theNetworkChuck/ai-in-the-terminal) companion guide to the "AI in the Terminal" video.*
 
+### A note on costs
+
+This is an AI-heavy workflow. If you are working on a real research project — reading data files, writing scripts, editing manuscripts — you will consume tokens quickly. Be realistic about that upfront.
+
+**At minimum, you need a paid subscription.** Claude Code requires Claude Pro ($20/month) or equivalent. The free tier will not get you through a working session.
+
+**I recommend going further**, at least for the first month. If you are trying to get a stalled project unstuck, treat the higher-tier subscription (Claude Max at $100/month, or equivalent for your tool) as part of the cost of getting your research moving again. Dive in, spend a few weeks working intensively, and then assess whether the ongoing cost is worth it. For most researchers, the answer is obvious after one real session — but you need to be all-in enough to reach that point.
+
+This is not a tool you can evaluate on the free tier. Budget accordingly.
+
 If you get stuck during setup, you can use any AI you already have access to (ChatGPT, Claude.ai, Gemini) to help troubleshoot.
 
 ---
