@@ -95,3 +95,28 @@ The AI searches your `.bib` file, finds the key, and inserts the `\cite{}` comma
 
 {: .tip }
 > **A useful test** — Read the AI's draft aloud. If it sounds like a committee wrote it, rewrite it. Good academic writing has a voice. The AI can help you find yours by cleaning up your rough drafts, but it should not replace your voice entirely.
+
+## Auditing your draft: Referee 2
+
+Once you have a working draft — organized, coded, with tables and figures in place — you need to stress-test it before submitting. You cannot grade your own homework, and the AI that helped you write it should not be the one reviewing it.
+
+[Referee 2](https://github.com/Black-JL/MixtapeTools/tree/main/personas) is an open-source audit protocol created by [Scott Cunningham](https://github.com/scunning1975/MixtapeTools) (of *Causal Inference: The Mixtape*) that uses AI to perform five systematic audits on your research:
+
+1. **Code audit.** Identifies coding errors, missing value problems, and logic gaps in your scripts.
+2. **Cross-language replication.** Creates independent implementations of your analysis in R, Stata, and Python. If your original code has a subtle bug, a replication in a different language will likely produce a *different* bug — making discrepancies easy to catch. You cannot find errors by re-reading the same code that produced them.
+3. **Directory audit.** Checks that your replication package is submission-ready: every file accounted for, every path working, every dependency documented.
+4. **Output automation audit.** Verifies that all tables and figures are programmatically generated from code, not manually edited.
+5. **Econometrics audit.** Reviews specification coherence, identification strategy, standard error choices, and sample definitions.
+
+The key principle is independence. Referee 2 operates as a separate session — it reads your project but never modifies your code. It produces a formal referee report and saves replication scripts to `code/replication/` for your review.
+
+### How to use it
+
+After your draft is complete and your pipeline runs cleanly:
+
+1. Open a new AI session in your project folder.
+2. Load the Referee 2 persona from the [MixtapeTools personas](https://github.com/Black-JL/MixtapeTools/tree/main/personas) directory.
+3. Point it at your manuscript, scripts, and output.
+4. Review the report. Fix what needs fixing. Repeat.
+
+Think of it as a pre-submission peer review — rigorous, structured, and designed to catch the things you are too close to the project to see.
