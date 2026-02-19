@@ -1,0 +1,65 @@
+project:
+  type: book
+  output-dir: _site
+
+book:
+  title: "The AI-Assisted Research Flow"
+  subtitle: "A Practical Guide for Empirical Researchers"
+  author: "Jared L. Black"
+  date: last-modified
+  date-format: "MMMM YYYY"
+  site-url: https://black-jl.github.io/Research-Project-Flow
+  repo-url: https://github.com/Black-JL/Research-Project-Flow
+  repo-actions: [source, issue]
+  sharing: [twitter, linkedin]
+  downloads: [pdf]
+  search: true
+  sidebar:
+    collapse-level: 1
+    style: floating
+
+  chapters:
+    - index.qmd
+    - part: "Getting Started"
+      chapters:
+        - 01-why-ai-research.qmd
+        - 02-tools-setup.qmd
+    - part: "The Flow"
+      chapters:
+        - 03-project-structure.qmd
+        - 04-ai-assisted-workflow.qmd
+        - 05-writing-with-ai.qmd
+    - part: "Reference"
+      chapters:
+        - 06-commands-cheatsheet.qmd
+        - 07-faq.qmd
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+    fontsize: 0.9em
+    linestretch: 1.4
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    link-external-newwindow: true
+    link-external-icon: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+
+  pdf:
+    documentclass: scrreprt
+    papersize: letter
+    fontsize: 10pt
+    geometry:
+      - top=1in
+      - bottom=1in
+      - left=1.25in
+      - right=1.25in
+    colorlinks: true
+    linkcolor: RoyalBlue
+    urlcolor: RoyalBlue
+    toc: true
+    number-sections: true

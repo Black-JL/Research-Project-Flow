@@ -1,0 +1,34 @@
+# Welcome {.unnumbered}
+
+This guide teaches you how to run an empirical research project with AI as a working partner. Not a toy. Not a novelty. A tool that reads your code, writes your scripts, checks your logic, and keeps your project organized — while you make the decisions that matter.
+
+The approach here is built for economists and social scientists who work with data, write papers, and need reproducible results. It assumes no prior experience with AI tools or command-line interfaces.
+
+## What you will learn
+
+1. **Set up your machine** — install the tools, configure the environment, get Claude Code running.
+2. **Understand the project structure** — a folder layout that enforces discipline and makes AI collaboration possible.
+3. **Work the flow** — how a research session actually works when AI handles the scaffolding and you handle the thinking.
+4. **Write with AI** — use AI assistance for manuscripts without losing your voice or your standards.
+
+## What this is not
+
+This is not a guide to prompt engineering or "getting the most out of ChatGPT." The workflow here uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code), a command-line tool that operates directly in your project files. It reads your scripts, understands your folder structure, and executes commands. The interaction is collaborative, not conversational.
+
+## The template
+
+Everything in this guide maps to a concrete, reusable project template: [Research-Project-Flow](https://github.com/Black-JL/Research-Project-Flow). You can clone it, fill in your details, and start working. The guide explains what each piece does and why.
+
+## Who this is for
+
+- Graduate students starting their first empirical project
+- Researchers who want reproducible, well-organized workflows
+- Anyone curious about what AI-assisted research actually looks like in practice
+
+No command-line experience required. No AI experience required. Just a willingness to follow instructions and learn as you go.
+
+::: {.callout-tip}
+## Reading this guide
+
+Work through chapters 1–2 to get set up. Read chapters 3–5 when you start your first project. Keep chapters 6–7 open as reference.
+:::

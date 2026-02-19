@@ -1,0 +1,116 @@
+# FAQ
+
+## Getting started
+
+### Do I need to know how to code?
+
+Not to use the template. The AI writes code based on your descriptions. You need to understand what the code should do — what data goes in, what results come out — but you do not need to write it yourself.
+
+That said, reading code is a skill worth developing. Over time, you will start recognizing patterns in the scripts the AI produces, and you will get better at spotting errors.
+
+### Which statistical software should I use?
+
+The template supports Stata, R, and Python. Use whatever your field and co-authors expect. Most economics departments use Stata. The template handles mixed-language pipelines, so you can use R for data visualization and Stata for estimation in the same project.
+
+### How much does Claude Code cost?
+
+Claude Code uses the Anthropic API. A typical research session (a few hours of active work) costs roughly $2–10 in API tokens, depending on how much code the AI reads and writes. Monitor your usage at [console.anthropic.com](https://console.anthropic.com/).
+
+### Can I use this with ChatGPT or other AI tools?
+
+The template is designed for Claude Code specifically. The `CLAUDE.md` file, the slash commands, and the automated project management all depend on Claude Code's ability to read and write files directly in your project. Other AI tools operate through a chat interface and cannot do this.
+
+## Working with the template
+
+### How do I add a co-author?
+
+1. Share the Dropbox folder with them.
+2. Add their machine path to `scripts/00_run.do`.
+3. Point them to the Co-Author Instructions section in the README.
+
+They do not need Claude Code to contribute. They edit files in Dropbox, and you commit the changes to Git on their behalf.
+
+### What if the AI modifies something it shouldn't?
+
+The `CLAUDE.md` file includes rules that prevent the AI from modifying raw data or making unauthorized structural changes. If the AI proposes something you do not want, say no. It will adjust.
+
+If the AI does make an unwanted change, Git makes it trivial to undo:
+
+```bash
+git diff              # see what changed
+git checkout -- path/to/file   # revert a specific file
+```
+
+### How do I handle sensitive or restricted data?
+
+- Never commit sensitive data to Git. Add the file paths to `.gitignore`.
+- Document access instructions in `data/raw/README.md`.
+- Use the Data Availability Statement in your README to describe restrictions.
+- The AI operates locally on your machine — it does not upload your data anywhere.
+
+### What if the pipeline breaks?
+
+Run `/check` to identify the problem. The AI will report which scripts, data files, or references are inconsistent. Common issues:
+
+- A script references a file that was renamed → update the script or rename back
+- `params.do` and README disagree → reconcile the values
+- A log shows an error → read the log, fix the script, re-run
+
+## Git and GitHub
+
+### I have never used Git. Is that a problem?
+
+No. The `/git` command handles staging, committing, and pushing. You do not need to learn Git commands to use the template. But understanding what Git does — tracking changes, enabling undo, syncing with GitHub — will help you appreciate why the template uses it.
+
+### Can I use a private repository?
+
+Yes. When you clone the template, use `--private`:
+
+```bash
+gh repo create my-project --template Black-JL/Research-Project-Flow --private --clone
+```
+
+Your code and data descriptions stay private. Only people you explicitly invite can see the repo.
+
+### What goes on GitHub vs. Dropbox?
+
+- **GitHub:** Code, scripts, documentation, manuscript source, configuration files. Everything text-based and version-controlled.
+- **Dropbox:** Large data files, binary outputs, anything too big for Git. Dropbox provides the backup and sharing layer.
+
+The `.gitignore` file controls what Git tracks. Large data files should be excluded from Git and shared via Dropbox.
+
+## Troubleshooting
+
+### Claude Code says "command not found"
+
+Your PATH is not set up correctly. Check that Node.js and Claude Code are installed:
+
+```bash
+node --version
+which claude
+```
+
+If `claude` is not found, reinstall:
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+### The AI seems confused about my project
+
+It probably has not read `CLAUDE.md`. Make sure the file exists in your project root and contains the correct project path. Launch Claude Code from the project directory:
+
+```bash
+cd ~/Dropbox/my-project
+claude
+```
+
+### Scripts run in Terminal but not through `run_all.sh`
+
+Check that `run_all.sh` is executable:
+
+```bash
+chmod +x run_all.sh
+```
+
+Also verify that the statistical software is accessible from the command line. Stata in particular may need a PATH addition (see @sec-stats).
