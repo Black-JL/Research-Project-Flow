@@ -15,6 +15,8 @@ By Jared Black
 
 [Download as PDF](guide.pdf){: .btn .btn-primary .mr-2 }
 
+![An AI-Assisted Research Flow]({{ site.baseurl }}/assets/images/main_image.png)
+
 ---
 
 ## Is this you?
