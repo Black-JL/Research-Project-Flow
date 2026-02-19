@@ -84,7 +84,7 @@ Every research task follows the same pattern:
 
 1. **You describe what you need.** Plain English. "Write a script that merges the treatment and control datasets on county FIPS codes." Be specific about inputs and outputs.
 
-2. **The AI proposes a plan.** It reads your existing scripts, checks the pipeline table, and tells you what it intends to create or modify. If the change affects the project's structure (new scripts, new file paths), it asks for approval before proceeding.
+2. **The AI proposes a plan.** It reads your existing scripts, checks the pipeline table, and tells you what it intends to create or modify. If the change affects the project's structure, the AI is required to stop and warn you before proceeding. See "Break the glass" below.
 
 3. **The AI writes the code.** It follows your project conventions: script headers, naming patterns, parameter references. It creates the script, updates the README pipeline table, and registers the step in `00_run.do` and `run_all.sh`.
 
@@ -97,6 +97,21 @@ Every research task follows the same pattern:
 5. **The AI reads the log.** It checks for errors, warnings, and unexpected output. It reports what it finds.
 
 6. **You review and iterate.** If the output is wrong, you describe the problem. The AI fixes the code and you run again.
+
+### Break the glass
+
+The `CLAUDE.md` file includes a safety mechanism for high-impact changes. If you ask the AI to do anything that would alter:
+
+- **The pipeline** — adding, removing, or reordering scripts; changing what a script reads or writes
+- **Core parameters** — modifying `params.do` or the Parameters table in the README
+- **The master scripts** — changing `00_run.do` or `run_all.sh`
+- **The AI's own instructions** — editing `CLAUDE.md` itself
+
+...the AI will stop and warn you before doing it. It will tell you exactly what it plans to change and what will be affected downstream. It will not proceed until you confirm.
+
+This exists because pipeline changes cascade. If you rename a data file that three scripts depend on, those scripts will break. If you change a parameter that feeds into your estimation, every table and figure downstream may need to be regenerated. The AI knows this and will flag it.
+
+For routine work — writing a new script, editing prose, fixing a bug, generating a table — the AI just does it. The warning only fires when the change touches something structural.
 
 ### Long tasks and sub-agents
 

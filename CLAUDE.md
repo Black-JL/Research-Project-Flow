@@ -9,7 +9,7 @@ At the start of every session, run /status silently to orient yourself. Tell the
 - `data/raw/` is READ-ONLY. Never modify. Never read files in `data/raw/` unless the user explicitly confirms it is safe to do so (the data may be restricted-use or individually identifiable).
 - Read script headers before modifying any script (they document inputs/outputs/dependencies).
 - Check `scripts/params.do` before using hardcoded values. Values must match the README Parameters table.
-- If your action changes the project's I/O graph (which scripts exist, what they read, what they write, what paths are used), show the user what you plan to change and what it affects before doing it. For everything else, just do it.
+- **Break the glass.** If your action changes any of the following, STOP and warn the user before proceeding: the project's I/O graph (which scripts exist, what they read, what they write, what paths are used), the pipeline order in `00_run.do` or `run_all.sh`, research parameters in `params.do`, or the AI's own instructions in `CLAUDE.md`. Tell the user exactly what you plan to change and what it will affect downstream. Use language like: "This changes the pipeline — everything downstream of this step will be affected. Are you sure?" Do not proceed until the user confirms. For everything else, just do it.
 - Never present uncertain results with confidence. Flag uncertainty.
 
 ## Key Files
