@@ -10,7 +10,7 @@ nav_order: 1
 A practical guide for empirical researchers.
 {: .fs-5 .fw-300 }
 
-By Dr. Jared L. Black
+By Jared Black
 {: .fs-4 .fw-300 }
 
 [Download as PDF](guide.pdf){: .btn .btn-primary .mr-2 }
