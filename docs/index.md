@@ -4,7 +4,7 @@ layout: home
 nav_order: 1
 ---
 
-# The AI-Assisted Research Flow
+# An AI-Assisted Research Flow
 {: .fs-8 }
 
 A practical guide for empirical researchers.

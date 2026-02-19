@@ -69,7 +69,7 @@ pandoc "$COMBINED" \
   -V linkcolor=blue \
   -V urlcolor=blue \
   -V toccolor=black \
-  --metadata title="The AI-Assisted Research Flow" \
+  --metadata title="An AI-Assisted Research Flow" \
   --metadata subtitle="A practical guide for empirical researchers" \
   --metadata author="Dr. Jared L. Black" \
   --metadata date="$(date +%B\ %Y)"
