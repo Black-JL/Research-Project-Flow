@@ -1,4 +1,11 @@
-# Project Structure {#sec-project-structure}
+---
+title: Project Structure
+layout: default
+parent: The Flow
+nav_order: 1
+---
+
+# Project Structure
 
 ## Clone the template
 

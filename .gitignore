@@ -53,9 +53,9 @@ __pycache__/
 venv/
 *.egg-info/
 
-# Quarto build output
-guide/_site/
-guide/.quarto/
+# Jekyll build output
+_site/
+.jekyll-cache/
 
 # Dropbox conflicted copies
 *conflicted copy*

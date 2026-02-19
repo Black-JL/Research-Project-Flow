@@ -1,16 +1,21 @@
+---
+title: Tools & Setup
+layout: default
+parent: Getting Started
+nav_order: 2
+---
+
 # Tools & Setup
 
 This chapter walks you through every installation step. Follow it in order. By the end, you will have a working environment ready for AI-assisted research.
 
-::: {.callout-note}
-## Platform
-Instructions below are written for macOS. Windows equivalents are noted where they differ. If you are on Windows, start with Step 1 — installing WSL gives you a Linux environment where the remaining commands work the same way.
-:::
+{: .note }
+> **Platform** — Instructions below are written for macOS. Windows equivalents are noted where they differ. If you are on Windows, start with Step 1 — installing WSL gives you a Linux environment where the remaining commands work the same way.
 
 ## Overview
 
 | Tool | Purpose | Required |
-|------|---------|----------|
+|:-----|:--------|:---------|
 | SuperWhisper | Voice-to-text dictation (offline) | Recommended |
 | Homebrew | Package manager (macOS) | Yes (macOS) |
 | Git | Version control | Yes |
@@ -22,13 +27,15 @@ Instructions below are written for macOS. Windows equivalents are noted where th
 | Dropbox | File sync and backup | Recommended |
 | VS Code or text editor | Viewing and editing files | Recommended |
 
-## Step 0: Set up voice input with SuperWhisper {#sec-superwhisper}
+---
+
+## Step 0: Set up voice input with SuperWhisper
 
 Before installing anything technical, set up the tool that will change how you interact with your computer. [SuperWhisper](https://superwhisper.com/) is a voice-to-text app for macOS that runs entirely on your machine. No cloud. No subscription for the core functionality. No data leaving your computer. It uses OpenAI's Whisper model compiled to run locally on Apple Silicon.
 
-*(Windows: SuperWhisper is macOS-only. [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) offers similar offline voice-to-text and runs on Windows. The concept is the same — local transcription, no cloud — but setup requires more manual configuration.)*
-
 Why this matters: in this workflow, you talk to Claude Code constantly — describing what you need, explaining your data, asking questions. Typing all of that is slow. With SuperWhisper, you put your cursor wherever you want text to appear (the Terminal, a text editor, a manuscript file), press a hotkey, speak, and the transcribed text appears right there when you finish. No copy-pasting from a separate app. No online transcription service.
+
+*Windows: SuperWhisper is macOS-only. [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) offers similar offline voice-to-text and runs on Windows. The concept is the same — local transcription, no cloud — but setup requires more manual configuration.*
 
 ### Install and configure
 
@@ -49,17 +56,15 @@ The workflow is simple:
 
 That's it. No intermediate steps. No browser tab. No waiting for a server. The transcription runs on your Mac's neural engine and the text appears in place.
 
-::: {.callout-tip}
-## Where this shines
-When you are working in Claude Code and need to describe a complex data task — "merge the treatment dataset with the county demographics file on FIPS codes, keep only counties with population above 50,000, and flag any counties that appear in the treatment group before the policy date" — just say it. SuperWhisper transcribes it directly into the Terminal where Claude Code reads it. Faster than typing, and you tend to explain things more completely when speaking than when typing.
-:::
+{: .tip }
+> **Where this shines** — When you are working in Claude Code and need to describe a complex data task — "merge the treatment dataset with the county demographics file on FIPS codes, keep only counties with population above 50,000, and flag any counties that appear in the treatment group before the policy date" — just say it. SuperWhisper transcribes it directly into the Terminal where Claude Code reads it. Faster than typing, and you tend to explain things more completely when speaking than when typing.
 
-::: {.callout-note}
-## Hardware
-Offline models perform best on Apple Silicon Macs (M1 and later). If you are on an Intel Mac, the offline models will be slow — you can still use SuperWhisper's cloud mode, but you lose the offline advantage.
-:::
+{: .note }
+> **Hardware** — Offline models perform best on Apple Silicon Macs (M1 and later). If you are on an Intel Mac, the offline models will be slow — you can still use SuperWhisper's cloud mode, but you lose the offline advantage.
 
-## Step 1: Install Homebrew (macOS) {#sec-homebrew}
+---
+
+## Step 1: Install Homebrew (macOS)
 
 Homebrew is a package manager for macOS. It installs software from the command line. Open **Terminal** (search for "Terminal" in Spotlight) and paste:
 
@@ -75,12 +80,12 @@ brew --version
 
 You should see a version number. If you get "command not found," follow the instructions Homebrew printed about adding it to your PATH.
 
-::: {.callout-note}
-## Windows users
-Install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install), then install Homebrew inside WSL. Once WSL and Homebrew are set up, every `brew install` command in the remaining steps works identically. Claude Code requires a Unix-like environment — WSL provides this on Windows.
-:::
+{: .note }
+> **Windows users** — Install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install), then install Homebrew inside WSL. Once WSL and Homebrew are set up, every `brew install` command in the remaining steps works identically. Claude Code requires a Unix-like environment — WSL provides this on Windows.
 
-## Step 2: Install Git {#sec-git}
+---
+
+## Step 2: Install Git
 
 ```bash
 brew install git
@@ -99,7 +104,9 @@ git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
 ```
 
-## Step 3: Create a GitHub account {#sec-github}
+---
+
+## Step 3: Create a GitHub account
 
 Go to [github.com](https://github.com) and create an account if you don't have one.
 
@@ -112,7 +119,9 @@ gh auth login
 
 Follow the prompts to authenticate. Choose HTTPS and log in through your browser when prompted.
 
-## Step 4: Install Node.js {#sec-node}
+---
+
+## Step 4: Install Node.js
 
 Claude Code runs on Node.js. Install it:
 
@@ -128,7 +137,9 @@ node --version
 
 You need version 18 or higher.
 
-## Step 5: Install Claude Code {#sec-claude-code}
+---
+
+## Step 5: Install Claude Code
 
 ```bash
 npm install -g @anthropic-ai/claude-code
@@ -148,12 +159,12 @@ claude
 
 The first time you launch Claude Code, it will walk you through authentication. You need an [Anthropic account](https://console.anthropic.com/) with API access or a Claude Pro/Team subscription.
 
-::: {.callout-important}
-## API costs
-Claude Code uses the Anthropic API. Each session consumes tokens. A typical research session costs a few dollars. Monitor your usage at [console.anthropic.com](https://console.anthropic.com/).
-:::
+{: .important }
+> **API costs** — Claude Code uses the Anthropic API. Each session consumes tokens. A typical research session costs a few dollars. Monitor your usage at [console.anthropic.com](https://console.anthropic.com/).
 
-## Step 6: Install your statistical software {#sec-stats}
+---
+
+## Step 6: Install your statistical software
 
 Install whichever you use:
 
@@ -164,7 +175,7 @@ Install whichever you use:
 export PATH="/Applications/Stata/StataMP.app/Contents/MacOS:$PATH"
 ```
 
-*(Windows: Stata installs normally. To use it from WSL, call the Windows executable directly or add its path to your WSL environment.)*
+*Windows: Stata installs normally. To use it from WSL, call the Windows executable directly or add its path to your WSL environment.*
 
 **R:**
 
@@ -172,7 +183,7 @@ export PATH="/Applications/Stata/StataMP.app/Contents/MacOS:$PATH"
 brew install r
 ```
 
-*(Windows: download from [r-project.org](https://www.r-project.org/), or install inside WSL with `brew install r`.)*
+*Windows: download from [r-project.org](https://www.r-project.org/), or install inside WSL with `brew install r`.*
 
 **Python:**
 
@@ -180,9 +191,11 @@ brew install r
 brew install python
 ```
 
-*(Windows: download from [python.org](https://www.python.org/), or install inside WSL with `brew install python`.)*
+*Windows: download from [python.org](https://www.python.org/), or install inside WSL with `brew install python`.*
 
-## Step 7: Install Zotero and Better BibTeX {#sec-zotero}
+---
+
+## Step 7: Install Zotero and Better BibTeX
 
 1. Download [Zotero](https://www.zotero.org/download/) and install it.
 2. Install the [Better BibTeX plugin](https://retorque.re/zotero-better-bibtex/installation/).
@@ -191,7 +204,9 @@ brew install python
 
 This keeps your bibliography in sync automatically. Add a source in Zotero, and it appears in your `.bib` file.
 
-## Step 8: Set up Dropbox (optional but recommended) {#sec-dropbox}
+---
+
+## Step 8: Set up Dropbox (optional but recommended)
 
 If you use Dropbox for file sync:
 
@@ -202,9 +217,11 @@ If you use Dropbox for file sync:
 xattr -w com.dropbox.ignored 1 /path/to/your/project/.git
 ```
 
-*(Windows: in Dropbox desktop settings, add the `.git` folder to "Files not to sync," or use `Set-Content -Path '.git\.dropbox.ignore' -Value ''` in PowerShell.)*
+*Windows: in Dropbox desktop settings, add the `.git` folder to "Files not to sync," or use `Set-Content -Path '.git\.dropbox.ignore' -Value ''` in PowerShell.*
 
 This lets you use Dropbox for file backup and sharing with co-authors while Git handles version control separately.
+
+---
 
 ## Verify everything
 
@@ -217,4 +234,4 @@ node --version
 claude --version
 ```
 
-If any command fails, revisit the corresponding step above. Once everything works, move on to @sec-project-structure to set up your first project.
+If any command fails, revisit the corresponding step above. Once everything works, move on to [Project Structure]({% link the-flow/project-structure.md %}) to set up your first project.

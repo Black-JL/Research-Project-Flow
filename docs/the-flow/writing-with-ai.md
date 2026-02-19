@@ -1,3 +1,10 @@
+---
+title: Writing with AI
+layout: default
+parent: The Flow
+nav_order: 3
+---
+
 # Writing with AI
 
 ## The role of AI in academic writing
@@ -86,7 +93,5 @@ The AI searches your `.bib` file, finds the key, and inserts the `\cite{}` comma
 - **Generic framing.** Opening paragraphs that could describe any paper. Delete and write your own.
 - **Over-signposting.** "In this section, we will discuss..." — just discuss it.
 
-::: {.callout-tip}
-## A useful test
-Read the AI's draft aloud. If it sounds like a committee wrote it, rewrite it. Good academic writing has a voice. The AI can help you find yours by cleaning up your rough drafts, but it should not replace your voice entirely.
-:::
+{: .tip }
+> **A useful test** — Read the AI's draft aloud. If it sounds like a committee wrote it, rewrite it. Good academic writing has a voice. The AI can help you find yours by cleaning up your rough drafts, but it should not replace your voice entirely.

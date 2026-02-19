@@ -1,6 +1,15 @@
+---
+title: Commands Cheatsheet
+layout: default
+parent: Reference
+nav_order: 1
+---
+
 # Commands Cheatsheet
 
 Quick reference for every command available in the Research Project Flow template.
+
+---
 
 ## Project commands
 
@@ -112,12 +121,14 @@ Stages, commits, and pushes all changes.
 
 No confirmation prompt — it runs immediately. Use when your project is in a clean, working state.
 
+---
+
 ## Terminal commands
 
 These are standard terminal commands you will use alongside Claude Code.
 
 | Command | Purpose |
-|---------|---------|
+|:--------|:--------|
 | `claude` | Launch Claude Code in the current directory |
 | `cd ~/Dropbox/my-project` | Navigate to your project |
 | `git status` | Check for uncommitted changes |
@@ -125,10 +136,12 @@ These are standard terminal commands you will use alongside Claude Code.
 | `./run_all.sh "script_name"` | Run a pipeline step directly |
 | `./run_all.sh --all` | Run the full pipeline directly |
 
+---
+
 ## Keyboard shortcuts in Claude Code
 
 | Shortcut | Action |
-|----------|--------|
+|:---------|:-------|
 | `Enter` | Send message |
 | `Esc` | Cancel current operation |
 | `Ctrl+C` | Exit Claude Code |

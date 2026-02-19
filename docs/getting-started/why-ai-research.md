@@ -1,3 +1,10 @@
+---
+title: Why AI-Assisted Research
+layout: default
+parent: Getting Started
+nav_order: 1
+---
+
 # Why AI-Assisted Research
 
 ## The problem

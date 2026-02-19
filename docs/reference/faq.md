@@ -1,3 +1,10 @@
+---
+title: FAQ
+layout: default
+parent: Reference
+nav_order: 2
+---
+
 # FAQ
 
 ## Getting started
@@ -19,6 +26,8 @@ Claude Code uses the Anthropic API. A typical research session (a few hours of a
 ### Can I use this with ChatGPT or other AI tools?
 
 The template is designed for Claude Code specifically. The `CLAUDE.md` file, the slash commands, and the automated project management all depend on Claude Code's ability to read and write files directly in your project. Other AI tools operate through a chat interface and cannot do this.
+
+---
 
 ## Working with the template
 
@@ -56,6 +65,8 @@ Run `/check` to identify the problem. The AI will report which scripts, data fil
 - `params.do` and README disagree → reconcile the values
 - A log shows an error → read the log, fix the script, re-run
 
+---
+
 ## Git and GitHub
 
 ### I have never used Git. Is that a problem?
@@ -78,6 +89,8 @@ Your code and data descriptions stay private. Only people you explicitly invite 
 - **Dropbox:** Large data files, binary outputs, anything too big for Git. Dropbox provides the backup and sharing layer.
 
 The `.gitignore` file controls what Git tracks. Large data files should be excluded from Git and shared via Dropbox.
+
+---
 
 ## Troubleshooting
 
@@ -113,4 +126,4 @@ Check that `run_all.sh` is executable:
 chmod +x run_all.sh
 ```
 
-Also verify that the statistical software is accessible from the command line. Stata in particular may need a PATH addition (see @sec-stats).
+Also verify that the statistical software is accessible from the command line. Stata in particular may need a PATH addition (see [Tools & Setup]({% link getting-started/tools-setup.md %})).

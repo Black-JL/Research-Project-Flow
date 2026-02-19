@@ -1,4 +1,16 @@
-# Welcome {.unnumbered}
+---
+title: Welcome
+layout: home
+nav_order: 1
+---
+
+# The AI-Assisted Research Flow
+{: .fs-8 }
+
+A practical guide for empirical researchers.
+{: .fs-5 .fw-300 }
+
+---
 
 ## Is this you?
 
@@ -10,7 +22,7 @@ Your output is in a similar state. Maybe you have a LaTeX document, or a Word fi
 
 Your data preparation steps live in one place, grounded in one set of assumptions. Your estimation results and exhibits were created later, possibly under different assumptions, and you cannot completely trace them back. The pipeline — if you can call it that — has gaps. Dependencies are unclear. The idea of picking this project back up and bringing it to a publishable state feels overwhelming.
 
-If this sounds familiar, this guide is for you.
+**If this sounds familiar, this guide is for you.**
 
 ## What this does
 
@@ -37,8 +49,5 @@ Everything in this guide maps to a concrete, reusable project template: [Researc
 
 No command-line experience required. No AI experience required. Just a willingness to follow instructions and learn as you go.
 
-::: {.callout-tip}
-## Reading this guide
-
-Work through chapters 1–2 to get set up. Read chapters 3–5 when you start your first project. Keep chapters 6–7 open as reference.
-:::
+{: .tip }
+> **Reading this guide** — Work through the Getting Started chapters to set up your machine. Read The Flow chapters when you start your first project. Keep the Reference section open as a cheatsheet.

@@ -1,3 +1,10 @@
+---
+title: The AI-Assisted Workflow
+layout: default
+parent: The Flow
+nav_order: 2
+---
+
 # The AI-Assisted Workflow
 
 This chapter shows how a research session works in practice. Not theory — the actual sequence of actions when you sit down to work.
@@ -27,9 +34,9 @@ Every research task follows the same pattern:
 
 4. **You run the script.** Either directly or through the AI:
 
-```
-/run 05_merge
-```
+    ```
+    /run 05_merge
+    ```
 
 5. **The AI reads the log.** It checks for errors, warnings, and unexpected output. It reports what it finds.
 
@@ -61,7 +68,7 @@ You check the numbers. They make sense. You move on.
 The template includes built-in commands that handle common tasks:
 
 | Command | What it does |
-|---------|-------------|
+|:--------|:-------------|
 | `/status` | Scans the project. Reports pipeline state, last run dates, conflicts, uncommitted work. |
 | `/run` | Runs a pipeline step. Validates the script exists and logs the output. |
 | `/run --all` | Runs the full pipeline from start to finish. |
@@ -72,10 +79,8 @@ The template includes built-in commands that handle common tasks:
 
 ## Working with data
 
-::: {.callout-warning}
-## `data/raw/` is sacred
-Never modify raw data. The AI knows this rule (it's in `CLAUDE.md`). If you ask it to edit a file in `data/raw/`, it will refuse and explain why.
-:::
+{: .warning }
+> **`data/raw/` is sacred** — Never modify raw data. The AI knows this rule (it's in `CLAUDE.md`). If you ask it to edit a file in `data/raw/`, it will refuse and explain why.
 
 The typical data workflow:
 
