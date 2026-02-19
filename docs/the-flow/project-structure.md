@@ -87,6 +87,9 @@ This file tells the AI how to behave in your project. It specifies:
 
 The AI reads this file at the start of every session. It is the contract between you and the AI. Edit it when you want to change the AI's behavior. If you are starting a project without the template, you can create a fresh `CLAUDE.md` by typing `/init` in Claude Code.
 
+{: .note }
+> **Other tools have their own equivalents.** Codex uses `AGENTS.md`. Gemini CLI uses `GEMINI.md`. The content is the same idea — project instructions the AI reads at startup. If you use multiple tools on the same project, create the appropriate file for each. The template ships with `CLAUDE.md`; adapt it for your tool of choice.
+
 ### `scripts/00_run.do`
 
 The master do-file. It defines path globals for every collaborator's machine and calls each pipeline step in order. When you or the AI add a new script, it gets registered here.

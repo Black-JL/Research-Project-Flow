@@ -98,6 +98,14 @@ Every research task follows the same pattern:
 
 6. **You review and iterate.** If the output is wrong, you describe the problem. The AI fixes the code and you run again.
 
+### Long tasks and sub-agents
+
+Some tasks — rebuilding an entire pipeline, reorganizing a messy project, processing a dozen scripts — take longer than a single conversation. AI tools have a finite context window, and a sprawling session can lose focus.
+
+When you have a large task, you can ask the AI to break it into pieces and spawn separate agents for each one. For example: *"I need to clean and standardize all six raw data files. Spin up an agent for each one."* The AI will launch parallel sub-tasks that work independently and report back. You stay in the main session, reviewing results as they come in.
+
+This is not something you need to learn the mechanics of right now — the tools handle the details. Just know the capability exists. When a task feels too big for one session, tell the AI to decompose it.
+
 ## Example session
 
 Here is what an actual session looks like. You type the lines after `>`. Everything else is the AI responding.

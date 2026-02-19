@@ -2,6 +2,8 @@
 
 A reusable template for empirical research projects. Built for economists and social scientists using Stata, R, Python, LaTeX, Zotero, Dropbox, and AI-assisted workflows.
 
+**Guide:** [black-jl.github.io/Research-Project-Flow](https://black-jl.github.io/Research-Project-Flow) — full documentation, setup instructions, and workflow guide.
+
 **Origin:** Distilled from the Psychedelic Decriminalization & Psychosis project (2024-2026), validated against Gentzkow & Shapiro, TIER Protocol 4.0, AEA Data Editor guidelines, World Bank DIME Analytics, and the skhiggins/Julian Reif Stata guides.
 
 ---
@@ -212,4 +214,6 @@ For AEA-specific formatting, see `manuscript/aea_style_guide.md`.
 - [Julian Reif — Stata Coding Guide](https://julianreif.com/guide/)
 - [skhiggins — Stata Guide](https://github.com/skhiggins/Stata_guide)
 - [Better BibTeX — Auto-Export](https://retorque.re/zotero-better-bibtex/exporting/auto/)
+- [Scott Cunningham — MixtapeTools (Referee 2 audit protocol)](https://github.com/scunning1975/MixtapeTools)
+- [Scott Cunningham — Claude Code for Empirical Research](https://causalinf.substack.com/p/claude-code-part-12-how-i-use-claude)
 - McCloskey — *Economical Writing* (2nd ed., 2000)
