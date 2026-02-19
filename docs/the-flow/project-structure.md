@@ -9,8 +9,6 @@ nav_order: 1
 
 ## Clone the template
 
-<img src="{{ site.baseurl }}/assets/images/real_scenario_1.png" alt="Project setup illustration" class="page-illustration">
-
 Open Terminal, navigate to where you want the project, and clone:
 
 ```bash
@@ -137,3 +135,5 @@ claude
 ```
 
 The AI will read your `CLAUDE.md`, orient itself, and tell you if anything needs attention. You're ready to work.
+
+<img src="{{ site.baseurl }}/assets/images/real_scenario_1.png" alt="Project setup illustration" class="page-illustration" style="float: none; display: block; width: 220px; margin: 2rem auto;">
