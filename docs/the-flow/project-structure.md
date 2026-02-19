@@ -7,6 +7,8 @@ nav_order: 1
 
 # Project Structure
 
+![Project structure illustration]({{ site.baseurl }}/assets/images/header_1.png)
+
 ## Clone the template
 
 Open Terminal, navigate to where you want the project, and clone:

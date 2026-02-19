@@ -7,6 +7,8 @@ nav_order: 2
 
 # Tools & Setup
 
+![Test and refine illustration]({{ site.baseurl }}/assets/images/header_6.png)
+
 {: .note }
 > Instructions are written for macOS with Windows/Linux notes where they differ.
 

@@ -7,6 +7,8 @@ nav_order: 2
 
 # FAQ
 
+![Results and tables illustration]({{ site.baseurl }}/assets/images/header_4.png)
+
 ## Getting started
 
 ### Do I need to know how to code?

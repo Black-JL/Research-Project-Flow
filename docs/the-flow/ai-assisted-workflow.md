@@ -7,6 +7,8 @@ nav_order: 2
 
 # The AI-Assisted Workflow
 
+![Workflow illustration]({{ site.baseurl }}/assets/images/header_2.png)
+
 This chapter shows how a research session works in practice. Not theory — the actual sequence of actions when you sit down to work.
 
 ## Your workspace

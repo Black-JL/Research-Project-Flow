@@ -7,6 +7,8 @@ nav_order: 3
 
 # Writing with AI
 
+![Visualization pipeline illustration]({{ site.baseurl }}/assets/images/header_5.png)
+
 ## The role of AI in academic writing
 
 AI writes fast and clean. It does not write with insight. The division of labor is straightforward:

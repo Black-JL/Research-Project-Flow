@@ -7,6 +7,8 @@ nav_order: 1
 
 # Why AI-Assisted Research
 
+![Data analysis illustration]({{ site.baseurl }}/assets/images/header_3.png)
+
 ## The problem
 
 Empirical research requires managing a staggering number of moving pieces: raw data, cleaning scripts, analysis code, output files, manuscripts, citations, and the documentation that ties them together. Most researchers handle this by hand. Files accumulate. Naming conventions drift. Documentation lags behind reality. By the time a paper is under review, the project folder is a maze that only the original author can navigate — and sometimes not even them.
