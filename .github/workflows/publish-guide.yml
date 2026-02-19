@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'guide/**'
+      - '.github/workflows/publish-guide.yml'
   workflow_dispatch:
 
 permissions:
