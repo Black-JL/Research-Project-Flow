@@ -15,7 +15,10 @@ At the start of every session, run /status silently to orient yourself. Tell the
 ## Key Files
 - `scripts/00_run.do` — Master script. All path globals defined here.
 - `scripts/params.do` — Research parameters. Must match README Parameters table.
-- `run_all.sh` — Shell executor for pipeline steps.
+- `run_all.sh` — Shell executor for pipeline steps. All script execution goes through this.
+- `watch_logs.sh` — Opens a terminal to tail log files in real-time.
+- `pipeline.md` — Master pipeline document: step order, file dependencies, manuscript figure manifest.
+- `MCP_WORKFLOW.md` — Detailed documentation of the MCP execution workflow and guardrails.
 - `README.md` — Pipeline overview, table/figure map, parameters, data documentation.
 - `manuscript/aea_style_guide.md` — AEA formatting rules. Read before editing the manuscript.
 

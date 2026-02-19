@@ -39,9 +39,17 @@ The whole process may take a few dedicated sessions. And once the project is org
 3. **Work the flow** — how a research session actually works when AI handles the scaffolding and you handle the thinking.
 4. **Write with AI** — use AI assistance for manuscripts without losing your voice or your standards.
 
-## What this is not
+## Why this workflow and not a chatbot
 
-This is not a guide to prompt engineering or "getting the most out of ChatGPT." The workflow here uses [Claude Code](https://docs.anthropic.com/en/docs/claude-code), a command-line tool that operates directly in your project files. It reads your scripts, understands your folder structure, and executes commands. The interaction is collaborative, not conversational.
+One of the most important things to understand upfront: **everything stays on your computer, in your files, in your format.**
+
+When you paste code into ChatGPT or upload files to a web interface, your work lives in someone else's context window. You do not know exactly where it is. You cannot easily undo what was done. If the session ends or the tool changes, your work may be gone.
+
+This workflow is different. The AI operates directly in your project folder — the same folder you see in Finder or File Explorer. Every script it writes is a file on your hard drive. Every change it makes is visible in your file system. If you are using Git, every change is tracked and reversible. Nothing is hidden from you. Nothing takes place outside of your control.
+
+If the AI writes a bad script, you delete the file. If it makes a change you do not like, you revert it with one Git command. If you decide to stop using AI entirely, you still have a perfectly organized project folder with all your code, data, and documentation exactly where you left it.
+
+That is the point. The AI is a tool that works in your space, on your terms, producing artifacts that belong to you.
 
 ## The template
 
