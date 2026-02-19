@@ -1,9 +1,92 @@
-// Force all nav sections to be expanded (no click-to-expand)
-.nav-list .nav-list-item > .nav-list-expander + .nav-list {
+// =============================================
+// Force all nav sections expanded (no collapse)
+// =============================================
+
+// Override the display:none on child nav lists
+.nav-list-item > .nav-list {
   display: block !important;
 }
 
-// Hide the expander arrows since sections are always open
+// Hide the expander arrows entirely
 .nav-list-expander {
   display: none !important;
+}
+
+// =============================================
+// Green sidebar with white text
+// =============================================
+
+.side-bar {
+  background-color: #1b4332;
+}
+
+// Site title / header in sidebar
+.site-title {
+  color: #ffffff !important;
+}
+
+// All nav links white
+.nav-list-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+
+  &:hover,
+  &:focus {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    color: #ffffff !important;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+}
+
+// Parent category labels
+.nav-list-item .nav-list-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+// Search input on dark background
+.search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+// Search icon
+.search-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+// Aux links (e.g. "View on GitHub")
+.aux-nav .aux-nav-list-item a {
+  color: rgba(255, 255, 255, 0.7) !important;
+
+  &:hover {
+    color: #ffffff !important;
+  }
+}
+
+// Footer text in sidebar
+.site-footer {
+  color: rgba(255, 255, 255, 0.5);
+
+  a {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
+}
+
+// Sidebar border — remove or darken
+.side-bar {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
