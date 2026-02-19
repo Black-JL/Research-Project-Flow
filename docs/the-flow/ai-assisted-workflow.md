@@ -9,9 +9,35 @@ nav_order: 2
 
 This chapter shows how a research session works in practice. Not theory — the actual sequence of actions when you sit down to work.
 
+## Your workspace
+
+You can work in a plain terminal window — navigate to your project folder, type `claude`, and go. That works fine. But a better setup is to use **VS Code** or **Cursor** (they work almost identically) so you can see everything at once.
+
+### Recommended layout
+
+1. Open VS Code (or Cursor).
+2. **File → Open Folder** and select your project folder.
+3. Press <kbd>Ctrl</kbd> + <kbd>`</kbd> (backtick) to open the integrated terminal.
+4. *(Optional)* Move the terminal panel to the side: press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (macOS) or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> (Windows/Linux), type `View: Move Panel Left`, and hit Enter.
+
+Now you have:
+
+- **Left panel:** Terminal running Claude Code (or your AI tool of choice)
+- **Center/right:** Your script or manuscript file open for editing
+- **Additional tabs:** A compiled PDF preview, data files, logs — whatever you need
+
+Everything in one window. You talk to the AI on the left, watch the code change in the center, and preview your compiled manuscript on the right.
+
+### Alternatives
+
+- **Terminal only.** Open a terminal, `cd` to your project, type `claude`. Open a separate file browser and your PDF viewer alongside it.
+- **VS Code / Cursor extensions.** Both editors offer Claude and Codex extensions that embed the AI directly in the editor sidebar. These work well for code editing. The terminal approach (typing `claude` in the integrated terminal) gives you the full Claude Code experience with slash commands and project management.
+
+Use whatever feels comfortable. The workflow is the same either way.
+
 ## Starting a session
 
-Open Terminal, navigate to your project folder, and launch Claude Code:
+In your terminal (standalone or inside VS Code), navigate to your project and launch:
 
 ```bash
 cd ~/Dropbox/my-project
@@ -20,7 +46,23 @@ claude
 
 The AI reads your `CLAUDE.md` file and runs `/status` automatically. It scans the project and reports anything that needs attention: stale logs, Dropbox conflicts, uncommitted changes. If everything is clean, it stays quiet.
 
-You talk to the AI by typing in the terminal. It responds, reads files, writes code, and executes commands — all within your project directory.
+You talk to the AI by typing — or speaking, if you set up SuperWhisper — in the terminal. It responds, reads files, writes code, and executes commands, all within your project directory.
+
+## How the AI runs your scripts (MCP servers)
+
+When you tell the AI to run a Stata do-file, an R script, or a Python script, it does not just fire the command blindly. The template uses **MCP (Model Context Protocol) servers** — lightweight connectors that let the AI interact with external tools like Stata, R, and Python in a structured way.
+
+Here is what happens when the AI runs a script:
+
+1. The AI sends the run command through the MCP server for that tool (e.g., Stata).
+2. The tool opens, executes the script, and produces output.
+3. The MCP server captures the log output and passes it back to the AI.
+4. The AI reads the log, checks for errors and warnings, and reports what it finds.
+
+You see the tool running in real time. The AI sees the same output you do. This is how it can tell you "row 4,312 has a missing FIPS code" instead of just "the script ran."
+
+{: .note }
+> **Setting up MCP servers** — MCP configuration is project-specific and depends on which statistical tools you use. When you start a project from the template, ask the AI to help you configure MCP servers for your tools. It will set up the `.claude/` configuration files.
 
 ## The core loop
 
