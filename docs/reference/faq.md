@@ -106,6 +106,18 @@ These commands exist. Use them as you see fit. But for the parts of the workflow
 
 They do not need Claude Code to contribute. They edit files in Dropbox, and you commit the changes to Git on their behalf.
 
+### I have a project in Overleaf. How do I bring it over?
+
+1. In Overleaf, go to **Menu → Download → Source**. This gives you a zip file with all your `.tex`, `.bib`, figures, and style files.
+2. Unzip and sort into the template structure:
+   - `.tex` files → `manuscript/`
+   - `.bib` file → `manuscript/references.bib`
+   - Figures → `output/figures/`
+   - Style files (`.cls`, `.sty`, `.bst`) → `manuscript/`
+3. Update the file paths in your `.tex` file. Overleaf keeps everything flat in one folder, but the template separates manuscripts, figures, and tables into different directories. The `\includegraphics` and `\input` paths will need to change.
+
+The AI is good at that third step. Once you have the files in place, tell it: *"I pulled these files from Overleaf. Update all the paths in `manuscript.tex` to match the template structure."* It will find every `\includegraphics`, `\input`, and `\bibliography` command and fix the paths.
+
 ### What if the AI modifies something it shouldn't?
 
 The `CLAUDE.md` file includes rules that prevent the AI from modifying raw data or making unauthorized structural changes. If the AI proposes something you do not want, say no. It will adjust.
