@@ -70,6 +70,7 @@ This guide builds on the work of several people:
 - [Matthew Gentzkow and Jesse Shapiro](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf) — *Code and Data for the Social Sciences*, the foundational reference for reproducible project organization.
 - [Deirdre McCloskey](https://www.deirdremccloskey.com/docs/pdf/Article_86.pdf) — *Economical Writing*, the source of the writing standards enforced throughout the template.
 - [NetworkChuck](https://github.com/theNetworkChuck/ai-in-the-terminal) — the setup guide and video that this project's installation instructions are based on.
+- [AEA Data Editor](https://aeadataeditor.github.io/) — the replication standards and [template README](https://aeadataeditor.github.io/posts/2020-12-08-template-readme) that inform the project structure and documentation requirements.
 
 {: .tip }
 > **Reading this guide** — Work through the Getting Started chapters to set up your machine. Read The Flow chapters when you start your first project. Keep the Reference section open as a cheatsheet.
