@@ -29,6 +29,20 @@ Your data preparation steps live in one place, grounded in one set of assumption
 
 **If this sounds familiar, this guide is for you.**
 
+## Think of it this way
+
+Imagine a detective scene from a movie. Bits of evidence are scattered all over the room. On the wall, a board with red string connecting clues — pieces that depend on each other, that are derivative of each other. You can see the connections, but the room is a mess.
+
+This approach is like bringing in a filing cabinet with a built-in AI search-and-retrieve function. It picks up everything off the floor and files it like with like. Raw data in one drawer. Scripts in another. Output in a third. The manuscript in a fourth.
+
+But here is the problem with filing: it breaks all the strings. The connections between things — which script reads which data, which table came from which estimation, which figure depends on which cleaned dataset — those are the whole point. A filing cabinet that destroys the web of dependencies is worse than the mess.
+
+So this one does something extra. As it files everything, it maps every connection. It finds the strings that go nowhere and sets them aside. It keeps the ones that matter but reroutes them — short, clean, documented paths between related pieces. Then it creates a master index called the **pipeline**: a complete record of how everything connects to everything else.
+
+Once it is done, you can point to any final result and trace it back through every intermediate step to the source. You can add new evidence — a new dataset, a new specification — and walk it forward through the pipeline to see where it lands. You can ask the assistant "where did this number come from?" and it will follow the chain of dependencies back to the raw data.
+
+And because everything is filed and versioned, you can make changes with confidence. If something breaks, you revert. If a co-author needs access, you share the cabinet — and it enforces its own rules.
+
 ## What this does
 
 By learning the approach described here, you can do what I did: take a stalled project — disorganized, daunting, collecting dust — and revive it. Organize the code. Rebuild the pipeline. Map every table and figure back to the script and data that produced it. Update your manuscript. Get the project to a state where one command reproduces everything from raw data to final output.
