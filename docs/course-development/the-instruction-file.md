@@ -1,7 +1,7 @@
 ---
 title: The Instruction File
 layout: default
-parent: Course Development
+parent: Course Development Flow
 nav_order: 2
 ---
 

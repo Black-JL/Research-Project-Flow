@@ -2,6 +2,7 @@
 title: Why AI-Assisted Research
 layout: default
 parent: Getting Started
+grand_parent: Research Flow
 nav_order: 1
 ---
 

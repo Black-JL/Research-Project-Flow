@@ -2,6 +2,7 @@
 title: Project Structure
 layout: default
 parent: The Flow
+grand_parent: Research Flow
 nav_order: 1
 ---
 

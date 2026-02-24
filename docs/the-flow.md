@@ -1,7 +1,8 @@
 ---
 title: The Flow
 layout: default
-nav_order: 3
+parent: Research Flow
+nav_order: 2
 has_children: true
 ---
 

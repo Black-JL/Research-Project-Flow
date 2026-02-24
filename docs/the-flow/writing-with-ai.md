@@ -2,6 +2,7 @@
 title: Writing with AI
 layout: default
 parent: The Flow
+grand_parent: Research Flow
 nav_order: 4
 ---
 

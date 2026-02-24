@@ -1,7 +1,8 @@
 ---
 title: Getting Started
 layout: default
-nav_order: 2
+parent: Research Flow
+nav_order: 1
 has_children: true
 ---
 

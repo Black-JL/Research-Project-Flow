@@ -1,7 +1,8 @@
 ---
-title: Welcome
+title: Research Flow
 layout: home
 nav_order: 1
+has_children: true
 ---
 
 # An AI-Assisted Research Flow

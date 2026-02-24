@@ -1,7 +1,7 @@
 ---
 title: Collaboration & Handoff
 layout: default
-parent: Course Development
+parent: Course Development Flow
 nav_order: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Why This Is Different
 layout: default
-parent: Course Development
+parent: Course Development Flow
 nav_order: 1
 ---
 

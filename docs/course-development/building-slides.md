@@ -1,7 +1,7 @@
 ---
 title: Building Slides
 layout: default
-parent: Course Development
+parent: Course Development Flow
 nav_order: 3
 ---
 

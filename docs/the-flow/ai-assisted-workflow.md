@@ -2,6 +2,7 @@
 title: The AI-Assisted Workflow
 layout: default
 parent: The Flow
+grand_parent: Research Flow
 nav_order: 3
 ---
 

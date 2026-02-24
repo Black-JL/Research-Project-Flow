@@ -2,6 +2,7 @@
 title: Tools & Setup
 layout: default
 parent: Getting Started
+grand_parent: Research Flow
 nav_order: 2
 ---
 
