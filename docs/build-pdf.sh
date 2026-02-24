@@ -19,7 +19,7 @@ if [[ ! -f "$TEMPLATE_DIR/eisvogel.latex" ]]; then
   curl -sL "https://github.com/Wandmalfarbe/pandoc-latex-template/releases/download/v3.4.0/Eisvogel-3.4.0.zip" \
     -o /tmp/eisvogel.zip
   unzip -o /tmp/eisvogel.zip -d /tmp/eisvogel
-  cp /tmp/eisvogel/eisvogel.latex "$TEMPLATE_DIR/"
+  cp /tmp/eisvogel/Eisvogel-3.4.0/eisvogel.latex "$TEMPLATE_DIR/"
   rm -rf /tmp/eisvogel /tmp/eisvogel.zip
 fi
 
