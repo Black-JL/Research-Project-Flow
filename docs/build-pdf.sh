@@ -20,6 +20,10 @@ CHAPTERS=(
   "the-flow/your-first-session.md"
   "the-flow/ai-assisted-workflow.md"
   "the-flow/writing-with-ai.md"
+  "course-development/why-this-is-different.md"
+  "course-development/the-instruction-file.md"
+  "course-development/building-slides.md"
+  "course-development/collaboration-and-handoff.md"
   "reference/commands-cheatsheet.md"
   "reference/faq.md"
 )
@@ -71,7 +75,7 @@ pandoc "$COMBINED" \
   -V urlcolor=blue \
   -V toccolor=black \
   --metadata title="An AI-Assisted Research Flow" \
-  --metadata subtitle="A practical guide for empirical researchers" \
+  --metadata subtitle="A practical guide for empirical researchers and course developers" \
   --metadata author="Dr. Jared L. Black" \
   --metadata date="$(date +%B\ %Y)"
 
