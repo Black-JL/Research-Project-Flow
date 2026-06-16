@@ -177,6 +177,20 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 
 ## Writing Standard
 
+Three layers, each with a distinct job:
+
+### Voice: Weitzman
+
+The default voice for all prose is modeled on Martin Weitzman's late-career writing. Weitzman's power came from letting the structure of the problem make the argument. Five principles:
+
+1. **Make ignorance dangerous.** State what is unknown, then show that the unknown region is exactly where the largest consequences live. The absence of evidence is not safety — it is a feature of how the evidence was generated.
+2. **Let structure make the argument.** Never say "this is important." Set up the logical structure so the reader arrives at importance on their own. Describe the decision problem precisely; the conclusion follows.
+3. **Use the nulls as setup.** When most results are null, that is not a weakness — it is the center of the distribution. The finding is in the tail. The nulls breed false confidence; the tail is where the stakes live.
+4. **Name the mechanism that makes the evidence misleading.** Do not say "prior research has limitations." Identify the specific feature of the evidence-generating process that produces the blind spot — screening criteria, sample selection, institutional design. A named mechanism is harder to dismiss than a vague caveat.
+5. **Write to a decision-maker, not a spectator.** Frame the contribution as: here is what you now know, here is what you still do not, and you will have to decide anyway. The reader should feel the weight of what they are deciding after finishing the paper.
+
+### Clarity: McCloskey
+
 All prose follows McCloskey's *Economical Writing* principles:
 
 1. **Active verbs.** "Prices increased" not "an increase in prices occurred."
@@ -188,7 +202,13 @@ All prose follows McCloskey's *Economical Writing* principles:
 7. **No boilerplate.** Never open with "This paper discusses..."
 8. **Tables and graphs are writing.** Same rules apply.
 
-For AEA-specific formatting, see `manuscript/aea_style_guide.md`.
+### Formatting: AEA
+
+For typesetting, tables, figures, citations, and submission requirements, see `manuscript/aea_style_guide.md`.
+
+### How They Interact
+
+Weitzman sets the *force* — the argument's architecture, what is foregrounded, what the reader is left to conclude. McCloskey sets the *surface* — every sentence is active, concrete, and short. AEA sets the *container* — margins, fonts, table rules, citation style. When in doubt: Weitzman decides *what* to say, McCloskey decides *how* to say it, AEA decides *how it looks on the page*.
 
 ---
 
@@ -217,3 +237,12 @@ For AEA-specific formatting, see `manuscript/aea_style_guide.md`.
 - [Scott Cunningham — MixtapeTools (Referee 2 audit protocol)](https://github.com/scunning1975/MixtapeTools)
 - [Scott Cunningham — Claude Code for Empirical Research](https://causalinf.substack.com/p/claude-code-part-12-how-i-use-claude)
 - McCloskey — *Economical Writing* (2nd ed., 2000)
+- Weitzman — "On Modeling and Interpreting the Economics of Catastrophic Climate Change" (*Review of Economics and Statistics*, 2009) — model for argument structure and making ignorance dangerous
+
+---
+
+## License
+
+This template — the scaffolding, scripts, instruction files, and documentation — is released under the [MIT License](LICENSE). You are free to use, modify, and adapt it for your own research projects, including commercial work, with attribution preserved.
+
+The license covers the template only. When you build a project on top of it, your own research data, analysis code, and manuscript remain yours to license (or restrict) as you see fit — and any restricted-use data you load is governed by its own Data Use Agreement, not this license.
