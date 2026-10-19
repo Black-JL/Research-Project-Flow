@@ -102,6 +102,13 @@ Don't explain the process or praise the draft.
 
 Whenever the author hands back an edited version of something Claude drafted, in this session or a later one:
 
+**Accepted forms** (take whichever the author uses):
+- "here's my edit" plus the new text, when Claude's draft is in this session. Diff it against that draft.
+- A `BEFORE:` / `AFTER:` pair, optionally with a `WHY:` line. Use this in later sessions, or for text edited directly in the .tex file or in Overleaf.
+- "learn from my edits to <file/section>". If the file is under git, diff it against the commit or version that held Claude's draft. Otherwise ask for the BEFORE text.
+
+**Style vs. content:** if a `WHY:` line or the change itself shows the edit fixed a fact, a number, or an argument rather than wording, log it under `Pattern: CONTENT (not voice)` and don't let it shape the voice profile. A `WHY:` line from the author outranks any pattern Claude infers.
+
 1. Diff Claude's version against the author's version.
 2. Append one entry per meaningful change to the edit ledger, in this format:
 
