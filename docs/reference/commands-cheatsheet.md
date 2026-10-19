@@ -80,6 +80,25 @@ Full integrity audit of the project.
 
 ---
 
+### `/review`
+
+Adversarial review of a change to estimation or sample-construction logic, before you accept it. Layer 2 of dual-layer validation.
+
+```
+> /review
+```
+
+**What it does:**
+
+1. Diffs the new logic against the prior version (`git diff` or the prior lettered script)
+2. Grades each identification dimension — sample restrictions, outcome/exposure definitions, covariates, standard errors, strata, time origin, weights, control group, treatment dates
+3. Verifies Inline Audit Trail comments and checkpoint asserts cover the change
+4. Returns a PASSED / WARNING / BLOCKER verdict per dimension and escalates any blocker
+
+**When to use:** Any time a script's specification changes. Cosmetic edits (paths, formatting, renaming) don't need it.
+
+---
+
 ### `/add-step`
 
 Scaffolds a new pipeline step end-to-end.

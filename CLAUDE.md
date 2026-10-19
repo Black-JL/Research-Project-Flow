@@ -66,6 +66,49 @@ Before modifying any script, trace its dependencies in both directions:
 
 Check the pipeline table in the README to verify the chain. If your change affects upstream or downstream dependencies, tell the user before proceeding.
 
+## Rigor & Audit Standards
+
+These standards make every analytical step auditable and stop code from drifting away from the results it produced. Adapted from the Data Analyst Augmentation Framework (DAAF, LGPL-3.0).
+
+### 1. Dual-layer validation — every transformation gets a validation, no exceptions
+
+**Layer 1 — in-script assertions at named checkpoints.** As data moves through a script, assert what must be true, and comment each checkpoint so a reader can find it:
+- **CP1 (post-load):** row/column counts, key uniqueness, expected date range.
+- **CP2 (post-merge / post-clean):** merge match rates, no unexpected missingness, no duplicate keys introduced.
+- **CP3 (post-transform):** derived variables in valid ranges, no rows dropped unintentionally.
+- **CP4 (pre-save / pre-estimate):** final N matches the analysis plan; no rows lost since CP3 without an explicit, commented `drop`.
+
+```stata
+* --- CP2 (post-merge): every treatment row must find a covariate row ---
+merge m:1 fips year using "$processed/acs.dta"
+assert _merge == 3 if treat == 1
+count
+assert r(N) == 412903   // expected analysis N; change only with a logged reason
+```
+R: `stopifnot(...)`. Python: `assert ...`.
+
+**Detecting a failed checkpoint (Stata).** Stata's `-b` batch mode exits 0 even when a do-file errors with `r(<n>)`, so a failed `assert` cannot be detected from the shell exit code — `run_all.sh` will report success. Always confirm a Stata run by scanning its log in `output/logs/` for `r(` / `--Break--` / your own failure marker, not by trusting the exit status. (R `stopifnot` and Python `assert` do set nonzero exit codes, so the exit code is reliable for those.)
+
+**Layer 2 — adversarial methodology review.** Layer 1 catches code that ran *wrong*. Layer 2 catches code that ran *fine but is methodologically wrong*. Run `/review` before accepting any change to estimation or sample-construction logic.
+
+### 2. Inline Audit Trail (IAT)
+
+Every line that changes which rows or columns enter the analysis carries three comments — what it does, why, and what it assumes. Applies to every sample restriction, merge, collapse/aggregate, and derived analysis variable. A bare `keep if` is a silent identifying assumption; name it.
+
+```stata
+* INTENT:    Keep first encounter per patient.
+* REASONING: Survival origin is the first observed encounter; later visits are outcomes, not entries.
+* ASSUMES:   visit_seq == 1 reliably flags the first encounter (verified at CP1).
+keep if visit_seq == 1
+```
+R/Python: same three tags as `#` comments.
+
+### 3. Immutable execution record — code and its output never drift apart
+
+- **Logs are append-only.** `run_all.sh` writes a timestamped log per run to `output/logs/`. Never delete or overwrite a log, including failed runs — it is the permanent record of what the code did.
+- **Don't edit a script that produced a manuscript output — version it.** Once a script has generated a figure/table the manuscript uses, a change to its *specification* creates a new lettered copy (`10_estimate.do` → `10a_estimate.do`), per the script-numbering convention. The old script and its log stay, so any output traces to the exact code that made it.
+- **Provenance.** The run that produced an output is the most recent successful log for that script in `output/logs/`. Don't rename outputs out from under their logs.
+
 ## Session Logging
 
 At the end of each session (or when asked for `/handoff`), write a session log to `session_logs/`:

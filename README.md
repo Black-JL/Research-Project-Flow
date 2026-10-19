@@ -141,6 +141,7 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 | `/status` | Project status dashboard | Just type `/status`. Shows pipeline steps, last run dates, Dropbox conflicts, scratch work. |
 | `/run` | Run a pipeline step with validation | `/run` (prompts for step), `/run --all` (full pipeline), `/run --from 05` (from step 05 forward). |
 | `/check` | Full project integrity and manuscript audit | Just type `/check`. Verifies scripts, data files, params, and manuscript references all match. |
+| `/review` | Adversarial review of an estimation/sample change | Just type `/review` after changing specification logic. Diffs old vs. new, grades each identification dimension PASSED/WARNING/BLOCKER, escalates blockers. |
 | `/add-step` | Scaffold a new pipeline step end-to-end | Just type `/add-step`. Prompts for step number, language, inputs, outputs. Creates script, updates README and run_all.sh. |
 | `/handoff` | Co-author or future-session summary | Just type `/handoff`. Summarizes recent changes, outputs regenerated, open questions. Writes to `session_logs/`. |
 
