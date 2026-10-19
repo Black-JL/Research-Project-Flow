@@ -36,12 +36,18 @@ Add `--dois` to print bare DOIs (for Zotero import) or `--json` for raw data.
 
 ## Keys (optional, free, raise rate limits)
 
-Read from the environment or from `~/.config/lit-search/keys.env` (keep that file private, `chmod 600`):
+The script reads each key from the environment first, then from the **macOS Keychain** (service `apikey:<NAME>`). It never reads keys from files in a repo.
+
+| Name | What it is | Where to get it |
+|---|---|---|
+| `OPENALEX_API_KEY` | Raises OpenAlex from 10 to 30 requests/sec | openalex.org → sign in → Settings → API key (free) |
+| `S2_API_KEY` | A dedicated 1 request/sec, instead of the shared anonymous pool that often returns 429 | Request at https://www.semanticscholar.org/product/api (free) |
+| `LIT_MAILTO` | Optional contact email sent to the APIs | Only if the user chooses to share it |
+
+Store or replace a key on macOS with a small Keychain wrapper, or with `security` directly:
 
 ```
-OPENALEX_API_KEY=...   # free: openalex.org → sign in → Settings → API key (10 → 30 requests/sec)
-S2_API_KEY=...         # free: request at https://www.semanticscholar.org/product/api (dedicated 1 request/sec, no shared-pool 429s)
-LIT_MAILTO=...         # optional contact email sent to the APIs; only set if the user chooses to
+security add-generic-password -U -a "$USER" -s "apikey:S2_API_KEY" -w   # prompts for the value; -U overwrites
 ```
 
-Never put the user's email address or keys anywhere without their say-so.
+On other systems, export the variables in the shell instead. Never write the user's email address or keys anywhere without their say-so.

@@ -14,9 +14,9 @@ Usage:
   lit.py saturation "topic" [--from 2000]          # papers and reviews per year
 Add --json to any command for raw JSON. Add --dois to print just the DOIs (for Zotero import).
 
-Optional keys (raise rate limits; both free) are read from the environment or
-~/.config/lit-search/keys.env:
-  OPENALEX_API_KEY=...   S2_API_KEY=...   LIT_MAILTO=you@example.org
+Optional keys (raise rate limits; both free) are read from the environment first,
+then from the macOS Keychain via the `apikey` helper (service "apikey:NAME"):
+  OPENALEX_API_KEY   S2_API_KEY   LIT_MAILTO (optional contact email)
 """
 import argparse
 import json
@@ -34,13 +34,18 @@ CR = "https://api.crossref.org"
 
 
 def load_keys():
-    path = os.path.expanduser("~/.config/lit-search/keys.env")
-    if os.path.exists(path):
-        for line in open(path):
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                k, v = line.split("=", 1)
-                os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+    """Environment wins; otherwise read the macOS Keychain (entries made with `apikey set NAME`)."""
+    import subprocess
+    for name in ("OPENALEX_API_KEY", "S2_API_KEY", "LIT_MAILTO"):
+        if os.environ.get(name):
+            continue
+        try:
+            r = subprocess.run(["security", "find-generic-password", "-s", f"apikey:{name}", "-w"],
+                               capture_output=True, text=True, timeout=5)
+            if r.returncode == 0 and r.stdout.strip():
+                os.environ[name] = r.stdout.strip()
+        except (OSError, subprocess.SubprocessError):
+            pass
 
 
 load_keys()
@@ -67,6 +72,9 @@ def get(url, headers=None, data=None, tries=4):
                 continue
             if e.code == 404:
                 return None
+            if e.code in (401, 403):
+                raise SystemExit(f"HTTP {e.code} from {url.split('?')[0]}: the API key was rejected "
+                                 "(expired or mistyped). Replace it with: apikey set OPENALEX_API_KEY  (or S2_API_KEY)")
             raise SystemExit(f"HTTP {e.code} from {url.split('?')[0]}"
                              + (" (rate limited; a free API key fixes this, see SKILL.md)" if e.code == 429 else ""))
         except urllib.error.URLError as e:
