@@ -142,6 +142,8 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 | `/run` | Run a pipeline step with validation | `/run` (prompts for step), `/run --all` (full pipeline), `/run --from 05` (from step 05 forward). |
 | `/check` | Full project integrity and manuscript audit | Just type `/check`. Verifies scripts, data files, params, and manuscript references all match. |
 | `/review` | Adversarial review of an estimation/sample change | Just type `/review` after changing specification logic. Diffs old vs. new, grades each identification dimension PASSED/WARNING/BLOCKER, escalates blockers. |
+| `/write` | Draft or revise prose that is clear and sounds like you | Also runs on its own when you ask for prose ("write up Table 3"). Outline of claims first, then a draft, a cold read by a fresh AI reader, and checks. Paste your edits back to teach it your voice. |
+| `/lit-search` | Search OpenAlex, Semantic Scholar, and Crossref directly | Also runs on its own when you ask for papers. Nearest-neighbour and duplication check, debate map, gap saturation, similar papers, DOI verification. |
 | `/add-step` | Scaffold a new pipeline step end-to-end | Just type `/add-step`. Prompts for step number, language, inputs, outputs. Creates script, updates README and run_all.sh. |
 | `/handoff` | Co-author or future-session summary | Just type `/handoff`. Summarizes recent changes, outputs regenerated, open questions. Writes to `session_logs/`. |
 
@@ -178,38 +180,39 @@ Pipeline step order, file dependencies, and I/O map. Update this table every tim
 
 ## Writing Standard
 
-Three layers, each with a distinct job:
+AI-drafted prose fails in four separate ways: it is unclear, it is jargony, the ideas get lost in the language, and it doesn't sound like the author. The `write` skill (`.claude/skills/write/SKILL.md`) handles all four. It runs whenever you ask for prose. Four layers, each with a distinct job:
 
-### Voice: Weitzman
+### 1. Structure: outline first, then PEER paragraphs
 
-The default voice for all prose is modeled on Martin Weitzman's late-career writing. Weitzman's power came from letting the structure of the problem make the argument. Five principles:
+Before any prose, the skill writes one topic sentence per paragraph. Each is a **claim**, not a topic, and you approve the list. **Skip test:** the topic sentences alone should make the argument. Each paragraph then makes one point, built as **P**oint, **E**vidence, **E**xplain, **R**epeat/link (from David Stuckler; see `.claude/skills/write/references/peer.md`).
 
-1. **Make ignorance dangerous.** State what is unknown, then show that the unknown region is exactly where the largest consequences live. The absence of evidence is not safety — it is a feature of how the evidence was generated.
-2. **Let structure make the argument.** Never say "this is important." Set up the logical structure so the reader arrives at importance on their own. Describe the decision problem precisely; the conclusion follows.
-3. **Use the nulls as setup.** When most results are null, that is not a weakness — it is the center of the distribution. The finding is in the tail. The nulls breed false confidence; the tail is where the stakes live.
-4. **Name the mechanism that makes the evidence misleading.** Do not say "prior research has limitations." Identify the specific feature of the evidence-generating process that produces the blind spot — screening criteria, sample selection, institutional design. A named mechanism is harder to dismiss than a vague caveat.
-5. **Write to a decision-maker, not a spectator.** Frame the contribution as: here is what you now know, here is what you still do not, and you will have to decide anyway. The reader should feel the weight of what they are deciding after finishing the paper.
+### 2. Voice: yours
 
-### Clarity: McCloskey
+How the prose *sounds* comes from a personal voice skill: your own writing samples, a profile of your voice, and a ledger of every edit you make to AI drafts. It lives in `~/.claude/skills/`, outside this repo, because it contains your writing. Setup takes about 15 minutes: `.claude/skills/write/references/voice-setup.md`.
 
-All prose follows McCloskey's *Economical Writing* principles:
+**Style modes** are optional and chosen per piece. A mode borrows another writer's *moves* for clarity and urgency, never their arguments. For example, a Weitzman mode sets facts side by side instead of using adjectives, states exactly where a claim stops, and uses understatement.
 
-1. **Active verbs.** "Prices increased" not "an increase in prices occurred."
-2. **Concrete.** "Machines and workers" not "capital and labor inputs."
-3. **Plain.** "Use" not "utilize."
-4. **Delete ruthlessly.** Cut "very," "basically," "actually."
-5. **One word, one meaning.** Pick a term and keep it.
-6. **End strong.** The last word carries emphasis.
-7. **No boilerplate.** Never open with "This paper discusses..."
-8. **Tables and graphs are writing.** Same rules apply.
+### 3. Guidelines: McCloskey and Orwell
 
-### Formatting: AEA
+These are rules for what to cut, not voices to imitate. Full text is in `.claude/skills/write/references/`:
+
+- **McCloskey, *Economical Writing*** (`mccloskey.md`): active verbs, concrete and plain words, delete ruthlessly, one word one meaning, end strong, no boilerplate, and tables and graphs are writing too.
+- **Orwell, "Politics and the English Language"** (`orwell.md`): the six rules, and the four habits to hunt for (dying metaphors, verbal false limbs, pretentious diction, meaningless words). "Let the meaning choose the word, and not the other way about."
+
+### 4. Formatting: AEA
 
 For typesetting, tables, figures, citations, and submission requirements, see `manuscript/aea_style_guide.md`.
 
-### How They Interact
+### Checks built into the `write` skill
 
-Weitzman sets the *force* — the argument's architecture, what is foregrounded, what the reader is left to conclude. McCloskey sets the *surface* — every sentence is active, concrete, and short. AEA sets the *container* — margins, fonts, table rules, citation style. When in doubt: Weitzman decides *what* to say, McCloskey decides *how* to say it, AEA decides *how it looks on the page*.
+- **Cold read:** a fresh AI reader with no project context summarizes each paragraph. If its summary doesn't match the outline, the text is unclear.
+- **Jargon leak:** catches variable names, script and spec labels, and undefined acronyms that crept into prose.
+- **Meaning drift:** after any edit, looks for synonym swaps, dropped qualifiers, changed verb strength, and widened outcomes.
+- **AI tells:** em dashes, "not just X but Y", reflexive triplets, summary last sentences, and words like "crucial", "landscape", and "delve".
+
+### How they interact
+
+The outline decides *what* to say, the voice decides *how it sounds*, the guidelines decide *what to cut*, and AEA decides *how it looks on the page*.
 
 ---
 
@@ -238,7 +241,9 @@ Weitzman sets the *force* — the argument's architecture, what is foregrounded,
 - [Scott Cunningham — MixtapeTools (Referee 2 audit protocol)](https://github.com/scunning1975/MixtapeTools)
 - [Scott Cunningham — Claude Code for Empirical Research](https://causalinf.substack.com/p/claude-code-part-12-how-i-use-claude)
 - McCloskey — *Economical Writing* (2nd ed., 2000)
-- Weitzman — "On Modeling and Interpreting the Economics of Catastrophic Climate Change" (*Review of Economics and Statistics*, 2009) — model for argument structure and making ignorance dangerous
+- Weitzman, "Fat-Tailed Uncertainty in the Economics of Catastrophic Climate Change" (*Review of Environmental Economics and Policy*, 2011): an example of style moves for clarity and urgency (an optional style mode)
+- Orwell, "Politics and the English Language" (*Horizon*, 1946): [text at the Orwell Foundation](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
+- Stuckler, PEER paragraph system: [video](https://www.youtube.com/watch?v=gFv47hloKN8)
 
 ---
 

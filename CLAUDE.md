@@ -118,12 +118,17 @@ At the end of each session (or when asked for `/handoff`), write a session log t
 
 ## Writing
 
-Three layers govern all prose. See the full Writing Standard in README.md.
+**All prose goes through the `write` skill** (`.claude/skills/write/`). That covers manuscript paragraphs and sections, abstracts, write-ups of findings, and proposal text. Use it whenever the user asks for prose, even if they don't name it. When the user hands back an edited version of a draft, run the skill's Learn step. See the Writing Standard in README.md.
 
-**Voice (Weitzman):** Let the structure of the problem make the argument. Make ignorance dangerous — show that what is unknown is where the stakes live. Name the mechanism that makes the evidence base misleading. Write to a decision-maker, not a spectator. Never say "this is important"; set up the logic so the reader arrives there.
+Voice skill: (set per author, e.g. `jared-voice`; it lives in `~/.claude/skills/`, outside this public repo)
 
-**Clarity (McCloskey):** Active verbs, concrete language, plain words. Delete ruthlessly. End strong. No boilerplate.
+Four layers, each with a distinct job:
 
-**Formatting (AEA):** Follow `manuscript/aea_style_guide.md` for all typesetting, tables, figures, and citation decisions.
+- **Structure (outline + PEER):** one claim per paragraph, approved as an outline before drafting. Each paragraph is built as Point, Evidence, Explain, Repeat/link.
+- **Voice (the author's voice skill):** how it sounds. The author's samples and edit ledger, not a famous writer's.
+- **Guidelines (McCloskey + Orwell):** what to cut and what to replace. Active verbs, concrete and plain words, no boilerplate, no worn phrases. See `.claude/skills/write/references/`.
+- **Formatting (AEA):** follow `manuscript/aea_style_guide.md` for typesetting, tables, figures, and citations.
 
-When in doubt: Weitzman decides *what* to say, McCloskey decides *how* to say it, AEA decides *how it looks on the page*.
+**Style modes** (e.g. Weitzman) are optional and chosen per piece: suggest one, and let the author pick. A style mode borrows a writer's *moves for clarity and urgency*, never their *arguments* or framing.
+
+When in doubt: the outline decides *what* to say, the voice decides *how it sounds*, the guidelines decide *what to cut*, and AEA decides *how it looks on the page*.
